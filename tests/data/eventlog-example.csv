@@ -1,0 +1,53 @@
+case_id;activity;event_time;user
+1;register request;01/02/2022 11:02;Pete
+1;check ticket;02/02/2022 10:06;Sue
+1;examine thoroughly;02/02/2022 15:12;Mike
+1;decide;03/02/2022 11:18;Sara
+1;reject request;03/02/2022 14:24;Pete
+2;register request;01/02/2022 11:32;Mike
+2;check ticket;01/02/2022 12:12;Mike
+2;examine casually;01/02/2022 14:16;Sean
+2;decide;03/02/2022 11:22;Sara
+2;pay compensation;04/02/2022 12:05;Ellen
+3;register request;01/02/2022 14:32;Pete
+3;examine casually;01/02/2022 15:06;Mike
+3;check ticket;01/02/2022 16:34;Ellen
+3;decide;02/02/2022 09:18;Sara
+3;reinitiate request;02/02/2022 12:18;Sara
+3;examine thoroughly;02/02/2022 13:06;Sean
+3;check ticket;03/02/2022 11:43;Pete
+3;decide;04/02/2022 09:55;Sara
+3;pay compensation;07/02/2022 10:45;Ellen
+4;register request;04/02/2022 15:02;Pete
+4;check ticket;07/02/2022 12:06;Mike
+4;examine thoroughly;08/02/2022 14:43;Sean
+4;decide;09/02/2022 12:02;Sara
+4;reject request;10/02/2022 15:44;Ellen
+5;register request;04/02/2022 09:02;Ellen
+5;examine casually;07/02/2022 10:16;Mike
+5;check ticket;08/02/2022 11:22;Pete
+5;decide;10/02/2022 13:28;Sara
+5;reinitiate request;11/02/2022 16:18;Sara
+5;check ticket;14/02/2022 14:33;Ellen
+5;examine casually;16/02/2022 15:50;Mike
+5;decide;17/02/2022 11:18;Sara
+5;reinitiate request;18/02/2022 12:48;Sara
+5;examine casually;21/02/2022 09:06;Sue
+5;check ticket;21/02/2022 11:34;Pete
+5;decide;23/02/2022 13:12;Sara
+5;reject request;24/02/2022 15:02;Mike
+6;register request;04/02/2022 15:02;Mike
+6;check ticket;04/02/2022 16:06;Ellen
+6;examine casually;07/02/2022 16:22;Mike
+6;decide;07/02/2022 16:52;Sara
+6;pay compensation;08/02/2022 11:47;Mike
+7;register request;02/02/2022 11:32;Mike
+7;check ticket;02/02/2022 12:12;Mike
+7;examine casually;02/02/2022 14:16;Sean
+7;decide;04/02/2022 11:22;Sara
+7;pay compensation;05/02/2022 12:05;Ellen
+8;register request;01/02/2022 11:02;Pete
+8;examine thoroughly;01/02/2022 13:06;Sue
+8;check ticket;01/02/2022 15:12;Mike
+8;decide;02/02/2022 11:18;Sara
+8;pay compensation;03/02/2022 14:24;Pete
