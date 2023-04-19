@@ -33,6 +33,11 @@ You can install Pepper Mining with Python's pip package manager:
 pip install peppermining
 ```
 
+## 🏃‍♂️ Quickstart
+Come soon
+  
+## <span>&#10070;</span> API Modules
+Come soon
   
 ## 📝 License
 Pepper Mining is completely free and open-source and licensed under the [MIT](https://github.com/ThoberDetofeno/peppermining/blob/main/LICENSE.txt) license.
