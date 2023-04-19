@@ -1,1 +1,4 @@
-PepperMining is a open source process mining platform written in Python.
+<div align="center">
+
+<img src="docs/images/logo.png" alt="drawing" width="200"/>
+
