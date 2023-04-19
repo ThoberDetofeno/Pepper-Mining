@@ -11,8 +11,8 @@
 
   # Welcome to Pepper Mining
 
-<br>PepperMining is a open source Process Mining platform written in Python, designed to be used in both academia and industry.
-<br>PepperMining is a framework designed firstly be the backend of an application. Such, the effort in this project is to build a framework following Design Patterns.
+<br>Pepper Mining is a open source Process Mining platform written in Python, designed to be used in both academia and industry.
+<br>Pepper Mining is a framework designed firstly be the backend of an application. Such, the effort in this project is to build a framework following Design Patterns.
 <br>In this documentation, you can find all relevant information to set up Pepper Mining and start your Process Mining journey.
 
 ## <span>&#9888;</span> Are you discovering Process Mining?
