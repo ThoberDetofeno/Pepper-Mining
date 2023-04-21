@@ -34,7 +34,10 @@ pip install peppermining
 ```
 
 ## 🏃‍♂️ Quickstart
-Come soon
+In this tutorial you will have a journey about the main features available in Pepper Mining.
+
+Therefore, for a more detailed overview of process mining, we recommend looking at the [Coursera MOOC](https://www.coursera.org/learn/process-mining) on [Process Mining and the seminal book of Wil van der Aalst](https://link.springer.com/book/10.1007/978-3-662-49851-4). Furthermore, before you begin, please install Pepper Mining on your system, i.e., as described in the Installation section.
+
   
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
