@@ -115,6 +115,15 @@ To finish this section, we show the filters used in second filter.
 # Visualize the filter used in second filter
 filter_2.get_filter()
 ```
+### Variant Explorer
+<br>Come soon
+
+### KPIs and Statistics
+<br>Come soon
+
+### Conformance Checking
+<br>Come soon
+
   
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
