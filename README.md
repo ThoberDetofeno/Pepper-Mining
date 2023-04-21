@@ -58,9 +58,9 @@ Observe that, the arrow black in the picture below describe the Case and the arr
 One of the characteristics of Pepper Mining is that the Event log is mandatory, but is possible to add the Cases information in separated. In this way, is possibible to add informations that represent all event logs and can be using with more performance in the filter operations or compliance analysis.
 The data this tutorial is available in CSV format, on the links below:
   
-Cases: 'https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/case-example.csv'
+Cases: https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/case-example.csv
 
-Event log: 'https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/eventlog-example.csv'
+Event log: https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/eventlog-example.csv
 
 ### Creating a Pepper Mining analysis
 Pepper Mining analysis is the beginning of all things. When creating the PepperMining object we are creating a Pepper Mining analysis.
