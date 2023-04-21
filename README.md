@@ -88,7 +88,27 @@ pepper.get_cases()
 pepper.get_activities()
 ```
 ### Filtering
-<br>Come soon  
+Filtering is the restriction of the Pepper Mining analysis (Event log and Case) to a subset of the behavior.
+
+After filtering the return object it have all behavior that Pepper Mining analysis. Because, de Pepper Filter is a inheritance of Pepper Mining.
+
+It is possible to do a hierarchy of filters, because each filter is a object.
+This way the user can make "n" filters and return to last step without losing the performance of the software.
+
+```python
+# Filter on end activities of Pepper Mining analysis
+filter_1 = pm.filters.CaseEndActivityFilter(pepper, ['pay compensation'])
+filter_1.get_cases()
+```
+```python
+# Case Filter of Pepper Filter (CaseEndActivityFilter)
+filter_2 = pm.filters.CaseFilter(filter_1, [7, 8], 'not contain')
+filter_2.get_cases()
+```
+```python
+# Visualize the filter used in second filter
+filter_2.get_filter()
+```
   
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
