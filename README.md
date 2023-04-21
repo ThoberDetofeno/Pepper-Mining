@@ -95,16 +95,22 @@ After filtering the return object it have all behavior that Pepper Mining analys
 It is possible to do a hierarchy of filters, because each filter is a object.
 This way the user can make "n" filters and return to last step without losing the performance of the software.
 
+  
+The first filter is select all Event Logs that ended with activity 'pay compensation'. For this, let's create the CaseEndActivityFilter object.
 ```python
 # Filter on end activities of Pepper Mining analysis
 filter_1 = pm.filters.CaseEndActivityFilter(pepper, ['pay compensation'])
 filter_1.get_cases()
 ```
+
+For the second filter, let's use the previous filter result. Now we want to view all events except the 7 and 8 cases. For this,  let's create the CaseFilter object with the parameter 'not contain'.
+  
 ```python
 # Case Filter of Pepper Filter (CaseEndActivityFilter)
 filter_2 = pm.filters.CaseFilter(filter_1, [7, 8], 'not contain')
 filter_2.get_cases()
 ```
+To finish this section, we show the filters used in second filter.
 ```python
 # Visualize the filter used in second filter
 filter_2.get_filter()
