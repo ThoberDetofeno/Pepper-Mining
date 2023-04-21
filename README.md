@@ -25,6 +25,8 @@ Enjoy #processmining!
 
 ## 🚀 Installation
 
+The Pepper Mining installation is very easy and used only 4 Python libraries.
+For more details about the Pepper Mining requirements, see too the [setup.py](https://github.com/ThoberDetofeno/peppermining/blob/main/setup.py)
 Install via PyPi
 You can install Pepper Mining with Python's pip package manager:
 
@@ -38,6 +40,34 @@ In this tutorial you will have a journey about the main features available in Pe
 
 Therefore, for a more detailed overview of process mining, we recommend looking at the [Coursera MOOC](https://www.coursera.org/learn/process-mining) on [Process Mining and the seminal book of Wil van der Aalst](https://link.springer.com/book/10.1007/978-3-662-49851-4). Furthermore, before you begin, please install Pepper Mining on your system, i.e., as described in the Installation section.
 
+### Data preparation
+In the remainder of this tutorial, we will use an oftenly used dummy example event log to explain the basic process mining operations. The process that we are considering is a simplified process related to customer complaint handling, i.e., taken from the book of van der Aalst. 
+
+The process, and the event data we are going to use, looks as follows.
+  
+<img src="docs/images/bpmn_running_example.png" alt="drawing" width="900"/> 
+
+  
+We have prepared a small sample event log, containing behavior similar equal to the process model. The samples we are using in this example contain 8 Cases and 52 Event log.
+
+Observe that, the arrow black in the picture below describe the Case and the arrow colorful are Event log. The Case contain two information, first a number that represent the case_id and second is a attribute with Product name. Each Event log contain the case_id, activity name, timestamp that start the activity, and resource that executed the activity.
+  
+<img src="docs/images/running_example.png" alt="drawing" width="1200"/> 
+
+  
+One of the characteristics of Pepper Mining is that the Event log is mandatory, but is possible to add the Cases information in separated. In this way, is possibible to add informations that represent all event logs and can be using with more performance in the filter operations or compliance analysis.
+The data this tutorial is available in CSV format, on the links below:
+  
+Cases: 'https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/case-example.csv'
+
+Event log: 'https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/eventlog-example.csv'
+
+### Creating a Pepper Mining analysis
+Pepper Mining analysis is the beginning of all things. When creating the PepperMining object we are creating a Pepper Mining analysis.
+The first step is creating a PepperMining object, the next step is to add data from Event Logs and Cases.
+
+After these two first steps are possible to visualize, filter and to do all operations in Pepper Mining.
+  
   
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
