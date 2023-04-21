@@ -67,6 +67,25 @@ Pepper Mining analysis is the beginning of all things. When creating the PepperM
 The first step is creating a PepperMining object, the next step is to add data from Event Logs and Cases.
 
 After these two first steps are possible to visualize, filter and to do all operations in Pepper Mining.
+```python
+import peppermining as pm
+# First step: Create Pepper analysis
+pepper = pm.PepperMining()
+# Second step: Add Event log and Case data
+pepper.read_event_log_csv('https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/eventlog-example.csv')
+pepper.read_cases_csv('https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/case-example.csv')
+```
+### Basic data visualizations  
+In this section the basic visualizations of the data added in Pepper Mining.
+```python
+# Return Event logs data
+pepper.get_event_log()
+# Return Cases data
+pepper.get_cases()
+# Return Activities data
+pepper.get_activities()
+```
+The basic views are: Event log, Cases and Activities
   
   
 ## <span>&#10070;</span> API Modules
