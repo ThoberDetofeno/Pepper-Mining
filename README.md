@@ -77,6 +77,8 @@ pepper.read_cases_csv('https://raw.githubusercontent.com/ThoberDetofeno/peppermi
 ```
 ### Basic data visualizations  
 In this section the basic visualizations of the data added in Pepper Mining.
+
+The basic views are: Event log, Cases and Activities  
 ```python
 # Return Event logs data
 pepper.get_event_log()
@@ -85,8 +87,8 @@ pepper.get_cases()
 # Return Activities data
 pepper.get_activities()
 ```
-The basic views are: Event log, Cases and Activities
-  
+### Filtering
+<br>Come soon  
   
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
