@@ -42,7 +42,7 @@ pip install peppermining
 ## 🏃‍♂️ Quickstart
 In this tutorial you will have a journey about the main features available in Pepper Mining.
 
-Therefore, for a more detailed overview of process mining, we recommend looking at the [Coursera MOOC](https://www.coursera.org/learn/process-mining) on [Process Mining and the seminal book of Wil van der Aalst](https://link.springer.com/book/10.1007/978-3-662-49851-4). Furthermore, before you begin, please install Pepper Mining on your system, i.e., as described in the Installation section.
+Before you begin, please install Pepper Mining on your system, as described in the Installation section.
 
 ### Data preparation
 In the remainder of this tutorial, we will use an oftenly used dummy example event log to explain the basic process mining operations. The process that we are considering is a simplified process related to customer complaint handling, i.e., taken from the book of van der Aalst. 
