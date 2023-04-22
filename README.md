@@ -116,7 +116,27 @@ To finish this section, we show the filters used in second filter.
 filter_2.get_filter()
 ```
 ### Variant Explorer
-<br>Come soon
+Variant Explorer is a analysis tool that helps you explore how a specific process flows through your organization, in the words, see all the different ways the process flows in your organization.
+
+In the Pepper Mining is possible to see the variant list of a Pepper Mining analysis or Pepper Filter.
+
+Firstly, we gonna using the Pepper Mining analysis to show the variant lists. The method get_variant return 3 main informations: a key that is an identifier for variant, a list of cases and a list of activities that represent each variant.
+
+In this example, about customer complaint handling, we have 5 variants. The image below show the activities sequence of each variant.
+
+<img src="docs/images/running_example_variants.png" alt="drawing" width="900"/> 
+
+```python
+# Variants of a Pepper Mining analysis
+pepper.get_variants()
+```
+
+In the second example, we used the Pepper Filter object to view the Variant lists.
+
+```python
+# Variants of a Pepper Filter
+filter_2.get_variants()
+```
 
 ### KPIs and Statistics
 <br>Come soon
