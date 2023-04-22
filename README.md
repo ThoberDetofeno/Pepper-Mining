@@ -11,16 +11,16 @@
 
   # Welcome to Pepper Mining
 
-<br>Pepper Mining is a open source Process Mining platform written in Python, designed to be used in both academia and industry.
-<br>Pepper Mining is a framework designed firstly be the backend of an application. Such, the effort in this project is to build a framework following Design Patterns.
-<br>In this documentation, you can find all relevant information to set up Pepper Mining and start your Process Mining journey.
+Pepper Mining is a open source Process Mining platform written in Python, designed to be used in both academia and industry.
+  
+Pepper Mining is a framework designed firstly be the backend of an application. Such, the effort in this project is to build a framework following Design Patterns.
+  
+In this documentation, you can find all relevant information to set up Pepper Mining and start your Process Mining journey.
 
 ## <span>&#9888;</span> Are you discovering Process Mining?
 I recommend accessing the contents of <a href="https://www.processmining.org/">processmining.org</a> and follow <b>Prof.dr.ir. Wil van der Aalst </b> on social media.
 
-The Process Mining Handbook is amazing, you can reading in https://link.springer.com/book/10.1007/978-3-031-08848-3.
-
-Therefore, for a more detailed overview of process mining, we recommend looking at the [Coursera MOOC](https://www.coursera.org/learn/process-mining) on [Process Mining and the seminal book of Wil van der Aalst](https://link.springer.com/book/10.1007/978-3-662-49851-4).  
+The Process Mining Handbook is amazing, you can reading in https://link.springer.com/book/10.1007/978-3-031-08848-3. Also, for a overview of process mining, we recommend looking at the [Coursera MOOC](https://www.coursera.org/learn/process-mining) on [Process Mining and the seminal book of Wil van der Aalst](https://link.springer.com/book/10.1007/978-3-662-49851-4).  
   
 See also <a href="https://pm4py.fit.fraunhofer.de/">PM4PY</a>, it is another open source Process Mining platform.
 
