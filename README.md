@@ -16,9 +16,13 @@
 <br>In this documentation, you can find all relevant information to set up Pepper Mining and start your Process Mining journey.
 
 ## <span>&#9888;</span> Are you discovering Process Mining?
-<br>I recommend accessing the contents of <a href="https://www.processmining.org/">processmining.org</a> and follow <b>Prof.dr.ir. Wil van der Aalst </b> on social media.
-<br>The Process Mining Handbook is amazing, you can reading in https://link.springer.com/book/10.1007/978-3-031-08848-3.
-<br>See also <a href="https://pm4py.fit.fraunhofer.de/">PM4PY</a>, it is another open source Process Mining platform.
+I recommend accessing the contents of <a href="https://www.processmining.org/">processmining.org</a> and follow <b>Prof.dr.ir. Wil van der Aalst </b> on social media.
+
+The Process Mining Handbook is amazing, you can reading in https://link.springer.com/book/10.1007/978-3-031-08848-3.
+
+Therefore, for a more detailed overview of process mining, we recommend looking at the [Coursera MOOC](https://www.coursera.org/learn/process-mining) on [Process Mining and the seminal book of Wil van der Aalst](https://link.springer.com/book/10.1007/978-3-662-49851-4).  
+  
+See also <a href="https://pm4py.fit.fraunhofer.de/">PM4PY</a>, it is another open source Process Mining platform.
 
 
 Enjoy #processmining!
