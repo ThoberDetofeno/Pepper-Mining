@@ -82,7 +82,7 @@ pepper.read_cases_csv('https://raw.githubusercontent.com/ThoberDetofeno/peppermi
 ### Basic data visualizations  
 In this section the basic visualizations of the data added in Pepper Mining.
 
-The basic views are: Event log, Cases and Activities  
+The basic views are: Event log, Cases, Activities and graph of event data.
 ```python
 # Return Event logs data
 pepper.get_event_log()
@@ -91,6 +91,17 @@ pepper.get_cases()
 # Return Activities data
 pepper.get_activities()
 ```
+Return the activities with interaction graph of event data. Return a graph using pydot objects. It is same the Spaghetti process. 
+```python
+# Return the pydot object
+graph = pepper.drawing()
+# Create a image 
+graph.write_png('output.png')
+# Render the png file.
+from IPython.display import Image
+Image('output.png')
+```
+  
 ### Filtering
 Filtering is the restriction of the Pepper Mining analysis (Event log and Case) to a subset of the behavior.
 
