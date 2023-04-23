@@ -123,10 +123,10 @@ For the second filter, let's use the previous filter result. Now we want to view
   
 ```python
 # Case Filter of Pepper Filter (CaseEndActivityFilter)
-filter_2 = pm.filters.CaseFilter(filter_1, [7, 8], 'not contain')
+filter_2 = pm.filters.CaseFilter(filter_1, [3, 8], 'not contain')
 filter_2.get_cases()
 ```
-To finish this section, we show the filters used in second filter.
+To finish this section, we show the filters used in second filter. Is possible to render the graph only of second filter.
 ```python
 # Visualize the filter used in second filter
 filter_2.get_filter()
