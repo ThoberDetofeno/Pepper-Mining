@@ -101,7 +101,7 @@ graph.write_png('output.png')
 from IPython.display import Image
 Image('output.png')
 ```
-<img src="docs/images/running_example_output.png" alt="drawing" width="700"/> 
+<img src="docs/images/running_example_output.png" alt="drawing" width="500"/> 
 
 ### Filtering
 Filtering is the restriction of the Pepper Mining analysis (Event log and Case) to a subset of the behavior.
