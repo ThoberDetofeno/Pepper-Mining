@@ -194,10 +194,20 @@ kp1.get_kpi_variants()
 # Return KPI value per day, it is important to line charts
 kp1.get_kpi_per_day()
 ```
+I´d like to show the KPI **Throughput time.**
 
+Throughput time is the actual time an activity takes to be done. This includes the entire duration from start to end of the activity,
+which in many cases means the time a factory needs to convert raw materials into finished goods.
+Given an event log, it is possible to retrieve the list of all the durations of the cases (expressed in seconds).
 
 ```python
-
+# Throughput time per case
+pepper.get_cases(['ThroughputTime'])
+# Summary with Throughput time
+pepper.get_summary(['ThroughputTime'])
+# Throughput time per variant
+kp2 = pm.kpi.ThroughputTime(pepper)
+kp2.get_kpi_variants()
 ```
 
 
