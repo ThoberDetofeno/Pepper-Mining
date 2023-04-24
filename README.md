@@ -210,16 +210,19 @@ kp2 = pm.kpi.ThroughputTime(pepper)
 kp2.get_kpi_variants()
 ```
 
-
-
 ### Conformance Checking
-<br>Come soon
+The conformance checker allows you to automatically compare a reference process model with the actual process flows discovered from the data. The difference between the model and actual flows is returned in the dataframe with a diagnostics column.
+
+Then, we need a process model to compare with Pepper Mining analysis, and after this we will have the Conformance and Violations.
+
+This section will have 3 steps: Definition of Process model, Conformance analysis and Violations.
+
 
   
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
 
-<br>Come soon
+Coming soon!
   
 ## 📝 License
 Pepper Mining is completely free and open-source and licensed under the [MIT](https://github.com/ThoberDetofeno/peppermining/blob/main/LICENSE.txt) license.
