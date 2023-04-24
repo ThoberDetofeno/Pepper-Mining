@@ -217,6 +217,10 @@ Then, we need a process model to compare with Pepper Mining analysis, and after 
 
 This section will have 3 steps: Definition of Process model, Conformance analysis and Violations.
 
+**1. Definition of Process Model.**
+
+Process Model represent the ideal model that used in the identification of validations and conformance.
+<img src="docs/images/running_example_model.png" alt="drawing" width="900"/> 
 
   
 ## <span>&#10070;</span> API Modules
