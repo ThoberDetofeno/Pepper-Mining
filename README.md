@@ -169,7 +169,38 @@ Image('output.png')
 <img src="docs/images/running_example_filter_variants.png" alt="drawing" width="900"/> 
   
 ### KPIs and Statistics
-<br>Come soon
+In Pepper Mining, it is possible to calculate different statistics and KPI in all modules. It can be used in the objects Pepper Mining analysis, Pepper Filter, and Conformance checking.
+
+Is possible to user the KPIs of two way.
+
+In the first situation you have a Pepper Analysis or Filter objects and to want adding the KPIs.
+```python
+# Return case datas with KPIs
+pepper.get_cases(['NumberOfEvents', 'NumberOfActivities'])
+# Return activities datas with KPIs
+pepper.get_activities(['NumberOfCases', 'Rework'])
+# Return variant datas with KPIs
+pepper.get_variants(['NumberOfEvents', 'NumberOfActivities', 'NumberOfCases'])
+# Return summary the events and cases.
+pepper.get_summary(['NumberOfEvents', 'NumberOfActivities', 'NumberOfCases', 'AverageEventsPerCase', 'Rework'])
+```
+Another way is creating the Pepper KPI object and add the Pepper Analysis or Pepper Filter.
+```python
+kp1 = pm.kpi.NumberOfCases(filter_1)
+# Summary
+kp1.get_kpi()
+# get_kpi_variants
+kp1.get_kpi_variants()
+# Return KPI value per day, it is important to line charts
+kp1.get_kpi_per_day()
+```
+
+
+```python
+
+```
+
+
 
 ### Conformance Checking
 <br>Come soon
