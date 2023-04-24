@@ -146,7 +146,7 @@ In this example, about customer complaint handling, we have 5 variants. The imag
 # Variants of a Pepper Mining analysis
 pepper.get_variants()
 ```
-
+  
 In the second example, we used the Pepper Filter object to view the Variant lists.
 
 ```python
@@ -154,6 +154,20 @@ In the second example, we used the Pepper Filter object to view the Variant list
 filter_2.get_variants()
 ```
 
+It is very common visualize the graph of specific variants. To show the graph of 2 variants, we gonna creating a variant filter and after view the graph.
+```python
+# Variant filter
+variant_list = ['register request->check ticket->examine casually->decide->pay compensation',
+                'register request->examine thoroughly->check ticket->decide->pay compensation']
+variants = pm.filters.VariantFilter(pepper, variant_list)
+# Create a image 
+variants.drawing().write_png('output.png')
+# Render the png file.
+from IPython.display import Image
+Image('output.png')
+```
+<img src="docs/images/running_example_filter_variants.png" alt="drawing" width="900"/> 
+  
 ### KPIs and Statistics
 <br>Come soon
 
