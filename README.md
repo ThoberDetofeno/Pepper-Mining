@@ -229,6 +229,23 @@ model_1.read_process_model_csv('https://raw.githubusercontent.com/ThoberDetofeno
 # Return the process model data
 model_1.get_process_model()
 ```
+
+**2. Conformance Analysis**
+
+The difference between the model and actual flows is returned in the dataframe with a diagnostics column.
+
+```python
+# Create the object to conformance analysis
+con_analysis = pm.Conformance(pepper, model_1)
+# Return all cases that are in conformance with models.
+con_analysis.get_cases()
+# Return Conformance overview data.
+con_analysis.get_summary(['NumberOfCases', 'AverageEventsPerCase', 'ThroughputTime'])
+# Return the diagnostic per case.
+con_analysis.diagnostics()
+```
+
+
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
 
