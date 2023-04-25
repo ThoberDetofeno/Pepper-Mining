@@ -43,6 +43,8 @@ pip install peppermining
 In this tutorial you will have a journey about the main features available in Pepper Mining.
 
 Before you begin, please install Pepper Mining on your system, as described in the Installation section.
+ 
+The IPython Notebook is [here](https://colab.research.google.com/drive/18y9ApU4CRzl-QR_4yWG0FPPulEXmfpBB?usp=sharing).
 
 ### Data preparation
 In the remainder of this tutorial, we will use an oftenly used dummy example event log to explain the basic process mining operations. The process that we are considering is a simplified process related to customer complaint handling, i.e., taken from the book of van der Aalst. 
