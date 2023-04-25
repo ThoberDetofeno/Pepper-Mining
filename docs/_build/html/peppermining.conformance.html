@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>peppermining.conformance package &mdash; peppermining 0.1.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            peppermining
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">peppermining.conformance package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-peppermining.conformance.conformance">peppermining.conformance.conformance module</a><ul>
+<li><a class="reference internal" href="#peppermining.conformance.conformance.Conformance"><code class="docutils literal notranslate"><span class="pre">Conformance</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.conformance.conformance.Conformance._component"><code class="docutils literal notranslate"><span class="pre">Conformance._component</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.conformance.conformance.Conformance._models"><code class="docutils literal notranslate"><span class="pre">Conformance._models</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.conformance.conformance.Conformance._conformance_list"><code class="docutils literal notranslate"><span class="pre">Conformance._conformance_list</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.conformance.conformance.Conformance.get_cases"><code class="docutils literal notranslate"><span class="pre">Conformance.get_cases()</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.conformance.conformance.Conformance.get_summary"><code class="docutils literal notranslate"><span class="pre">Conformance.get_summary()</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.conformance.conformance.Conformance.diagnostics"><code class="docutils literal notranslate"><span class="pre">Conformance.diagnostics()</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Conformance.diagnostics()</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Conformance.get_cases()</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Conformance.get_summary()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.conformance.process_model">peppermining.conformance.process_model module</a><ul>
+<li><a class="reference internal" href="#peppermining.conformance.process_model.ProcessModel"><code class="docutils literal notranslate"><span class="pre">ProcessModel</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.conformance.process_model.ProcessModel.set_process_model"><code class="docutils literal notranslate"><span class="pre">ProcessModel.set_process_model()</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.conformance.process_model.ProcessModel.read_process_model_csv"><code class="docutils literal notranslate"><span class="pre">ProcessModel.read_process_model_csv()</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.conformance.process_model.ProcessModel.get_process_model"><code class="docutils literal notranslate"><span class="pre">ProcessModel.get_process_model()</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.conformance.process_model.ProcessModel.clear_datas"><code class="docutils literal notranslate"><span class="pre">ProcessModel.clear_datas()</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">ProcessModel.clear_datas()</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">ProcessModel.get_process_model()</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">ProcessModel.read_process_model_csv()</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">ProcessModel.set_process_model()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.conformance.root_cause_analysis">peppermining.conformance.root_cause_analysis module</a><ul>
+<li><a class="reference internal" href="#peppermining.conformance.root_cause_analysis.root_cause_analysis"><code class="docutils literal notranslate"><span class="pre">root_cause_analysis()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.conformance">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">peppermining</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">peppermining.conformance package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/peppermining.conformance.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="peppermining-conformance-package">
+<h1>peppermining.conformance package<a class="headerlink" href="#peppermining-conformance-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="peppermining.conformance.violation.html">peppermining.conformance.violation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.pepper_violation">peppermining.conformance.violation.pepper_violation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation"><code class="docutils literal notranslate"><span class="pre">PepperViolation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation._type"><code class="docutils literal notranslate"><span class="pre">PepperViolation._type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation._violation_list"><code class="docutils literal notranslate"><span class="pre">PepperViolation._violation_list</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation._component"><code class="docutils literal notranslate"><span class="pre">PepperViolation._component</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation._models"><code class="docutils literal notranslate"><span class="pre">PepperViolation._models</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation.detection"><code class="docutils literal notranslate"><span class="pre">PepperViolation.detection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation.get_model_log"><code class="docutils literal notranslate"><span class="pre">PepperViolation.get_model_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation.get_model_activities"><code class="docutils literal notranslate"><span class="pre">PepperViolation.get_model_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation.add_violation"><code class="docutils literal notranslate"><span class="pre">PepperViolation.add_violation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.pepper_violation.PepperViolation.get_violation"><code class="docutils literal notranslate"><span class="pre">PepperViolation.get_violation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#id0"><code class="docutils literal notranslate"><span class="pre">PepperViolation.add_violation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#id1"><code class="docutils literal notranslate"><span class="pre">PepperViolation.detection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#id2"><code class="docutils literal notranslate"><span class="pre">PepperViolation.get_model_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#id3"><code class="docutils literal notranslate"><span class="pre">PepperViolation.get_model_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#id4"><code class="docutils literal notranslate"><span class="pre">PepperViolation.get_violation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.run_by_same_user">peppermining.conformance.violation.run_by_same_user module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.run_by_same_user.RunBySameUser"><code class="docutils literal notranslate"><span class="pre">RunBySameUser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.run_by_same_user.RunBySameUser.detection"><code class="docutils literal notranslate"><span class="pre">RunBySameUser.detection()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.undesired_activity">peppermining.conformance.violation.undesired_activity module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.undesired_activity.UndesiredActivity"><code class="docutils literal notranslate"><span class="pre">UndesiredActivity</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.undesired_activity.UndesiredActivity.detection"><code class="docutils literal notranslate"><span class="pre">UndesiredActivity.detection()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.undesired_connection">peppermining.conformance.violation.undesired_connection module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.undesired_connection.UndesiredConnection"><code class="docutils literal notranslate"><span class="pre">UndesiredConnection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.undesired_connection.UndesiredConnection.detection"><code class="docutils literal notranslate"><span class="pre">UndesiredConnection.detection()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.undesired_end">peppermining.conformance.violation.undesired_end module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.undesired_end.UndesiredEnd"><code class="docutils literal notranslate"><span class="pre">UndesiredEnd</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.undesired_end.UndesiredEnd.detection"><code class="docutils literal notranslate"><span class="pre">UndesiredEnd.detection()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.undesired_start">peppermining.conformance.violation.undesired_start module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.undesired_start.UndesiredStart"><code class="docutils literal notranslate"><span class="pre">UndesiredStart</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#peppermining.conformance.violation.undesired_start.UndesiredStart.detection"><code class="docutils literal notranslate"><span class="pre">UndesiredStart.detection()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-peppermining.conformance.conformance">
+<span id="peppermining-conformance-conformance-module"></span><h2>peppermining.conformance.conformance module<a class="headerlink" href="#module-peppermining.conformance.conformance" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.conformance.conformance.Conformance">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.conformance.conformance.</span></span><span class="sig-name descname"><span class="pre">Conformance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#peppermining.conformance.process_model.ProcessModel" title="peppermining.conformance.process_model.ProcessModel"><span class="pre">ProcessModel</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/conformance/conformance.html#Conformance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.conformance.Conformance" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Conformance Checker.</p>
+<p>The conformance checker allows you to automatically compare a reference process model with the actual process flows discovered from the data.
+The difference between the model and actual flows is returned in the dataframe with a diagnostics column.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.conformance.conformance.Conformance._component">
+<span class="sig-name descname"><span class="pre">_component</span></span><a class="headerlink" href="#peppermining.conformance.conformance.Conformance._component" title="Permalink to this definition"></a></dt>
+<dd><p>PepperMining or PepperFilter object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.conformance.conformance.Conformance._models">
+<span class="sig-name descname"><span class="pre">_models</span></span><a class="headerlink" href="#peppermining.conformance.conformance.Conformance._models" title="Permalink to this definition"></a></dt>
+<dd><p>List of ProcessModel objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.conformance.conformance.Conformance._conformance_list">
+<span class="sig-name descname"><span class="pre">_conformance_list</span></span><a class="headerlink" href="#peppermining.conformance.conformance.Conformance._conformance_list" title="Permalink to this definition"></a></dt>
+<dd><p>DataFrame with conformance details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.conformance.conformance.Conformance.get_cases">
+<span class="sig-name descname"><span class="pre">get_cases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/conformance/conformance.html#Conformance.get_cases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.conformance.Conformance.get_cases" title="Permalink to this definition"></a></dt>
+<dd><p>Return all cases that are in conformance with models.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.conformance.conformance.Conformance.get_summary">
+<span class="sig-name descname"><span class="pre">get_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/conformance/conformance.html#Conformance.get_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.conformance.Conformance.get_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Return Conformance overview data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.conformance.conformance.Conformance.diagnostics">
+<span class="sig-name descname"><span class="pre">diagnostics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/conformance/conformance.html#Conformance.diagnostics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.conformance.Conformance.diagnostics" title="Permalink to this definition"></a></dt>
+<dd><p>Return the diagnostic per case.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;activity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;register request&#39;</span><span class="p">,</span> <span class="s1">&#39;check ticket&#39;</span><span class="p">,</span> <span class="s1">&#39;examine casually&#39;</span><span class="p">,</span> <span class="s1">&#39;decide&#39;</span><span class="p">,</span> <span class="s1">&#39;pay compensation&#39;</span><span class="p">],</span> <span class="s1">&#39;sorting&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;activity&#39;</span><span class="p">,</span> <span class="s1">&#39;sorting&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span> <span class="o">=</span> <span class="n">ProcessModel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">set_process_model</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Conformance</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="n">md</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">get_cases</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">get_summary</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">diagnostics</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">diagnostics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/conformance/conformance.html#Conformance.diagnostics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Return the diagnostic per case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>DataFrame with the diagnosticas data.
+Columns:
+case_id: Case identification
+diagnostic: dictionary with DeepDiff results.</p>
+<blockquote>
+<div><p>More information in: <a class="reference external" href="https://zepworks.com/deepdiff/current/index.html">https://zepworks.com/deepdiff/current/index.html</a></p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">get_cases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/conformance/conformance.html#Conformance.get_cases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>Return all cases that are in conformance with models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kpi</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The a KPIs list. Choose the KPIs allow for the cases data.
+kpi = [‘NumberOfEvents’, ‘NumberOfActivities’, ‘Rework’]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with the Cases data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">get_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['NumberOfCases']</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/conformance/conformance.html#Conformance.get_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Return Conformance overview data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kpi</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The a KPIs list. Choose the KPIs allow for the conformance data.
+kpi = [‘NumberOfEvents’, ‘NumberOfActivities’, ‘NumberOfCases’, ‘AverageEventsPerCase’, ‘ThroughputTime’, ‘Rework’]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with the Conformance data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.conformance.process_model">
+<span id="peppermining-conformance-process-model-module"></span><h2>peppermining.conformance.process_model module<a class="headerlink" href="#module-peppermining.conformance.process_model" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.conformance.process_model.ProcessModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.conformance.process_model.</span></span><span class="sig-name descname"><span class="pre">ProcessModel</span></span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.process_model.ProcessModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Process Model represent the ideal model that used in the identification of validations and conformance.</p>
+<p>A Process Model is a depiction of the flow of work and tasks for specific goals.
+Process Models are important because they document existing processes and provide process knowledge.
+In the Pepper Mining the Process Model represent the ideal model, or the model that defines when the cases are in compliance.
+Each Process Model represent a process with Start and End.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.conformance.process_model.ProcessModel.set_process_model">
+<span class="sig-name descname"><span class="pre">set_process_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel.set_process_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.process_model.ProcessModel.set_process_model" title="Permalink to this definition"></a></dt>
+<dd><p>Input Process Model data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.conformance.process_model.ProcessModel.read_process_model_csv">
+<span class="sig-name descname"><span class="pre">read_process_model_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel.read_process_model_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.process_model.ProcessModel.read_process_model_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Import the CSV to process model data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.conformance.process_model.ProcessModel.get_process_model">
+<span class="sig-name descname"><span class="pre">get_process_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel.get_process_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.process_model.ProcessModel.get_process_model" title="Permalink to this definition"></a></dt>
+<dd><p>Return Process Model data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.conformance.process_model.ProcessModel.clear_datas">
+<span class="sig-name descname"><span class="pre">clear_datas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel.clear_datas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.process_model.ProcessModel.clear_datas" title="Permalink to this definition"></a></dt>
+<dd><p>Clear Process Model.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;activity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;register request&#39;</span><span class="p">,</span> <span class="s1">&#39;check ticket&#39;</span><span class="p">,</span> <span class="s1">&#39;examine casually&#39;</span><span class="p">,</span> <span class="s1">&#39;decide&#39;</span><span class="p">,</span> <span class="s1">&#39;pay compensation&#39;</span><span class="p">],</span>
+<span class="go">            &#39;sorting&#39;: [1, 2, 3, 4, 5]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;activity&#39;</span><span class="p">,</span> <span class="s1">&#39;sorting&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span> <span class="o">=</span> <span class="n">ProcessModel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">set_process_model</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">get_process_model</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">clear_datas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel.clear_datas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>Clear Process Model.</p>
+<p>Remove all rows and columns.
+After this method is possible include a new Process Model to the object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">get_process_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel.get_process_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>Return Process Model data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame with the process model data.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">read_process_model_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">';'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel.read_process_model_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Permalink to this definition"></a></dt>
+<dd><p>Import the CSV to process model data.</p>
+<p>Import the CSV into a pandas DataFrame.
+Convert the CSV into an process model Pandas DataFrame.
+The first step is to import the CSV file and internal API validate and convert it to the process model.
+See more infomation in the pandas documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Any valid string path is acceptable.</p></li>
+<li><p><strong>separator</strong> (<em>str</em>) – Delimiter used in CSV file.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">md</span> <span class="o">=</span> <span class="n">ProcessModel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">read_process_model_csv</span><span class="p">(</span><span class="s2">&quot;tests/data/processmodel-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">get_process_model</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">https</span></code></dt><dd><p>//pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">set_process_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/conformance/process_model.html#ProcessModel.set_process_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Permalink to this definition"></a></dt>
+<dd><p>Input Process Model data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_data</strong> (<em>pd.DataFrame</em>) – DataFrame with ‘activity’ and ‘sorting’ columns.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;activity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;register request&#39;</span><span class="p">,</span> <span class="s1">&#39;check ticket&#39;</span><span class="p">,</span> <span class="s1">&#39;examine casually&#39;</span><span class="p">,</span> <span class="s1">&#39;decide&#39;</span><span class="p">,</span> <span class="s1">&#39;pay compensation&#39;</span><span class="p">],</span>
+<span class="go">            &#39;sorting&#39;: [1, 2, 3, 4, 5]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;activity&#39;</span><span class="p">,</span> <span class="s1">&#39;sorting&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span> <span class="o">=</span> <span class="n">ProcessModel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">set_process_model</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">get_process_model</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.conformance.root_cause_analysis">
+<span id="peppermining-conformance-root-cause-analysis-module"></span><h2>peppermining.conformance.root_cause_analysis module<a class="headerlink" href="#module-peppermining.conformance.root_cause_analysis" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="peppermining.conformance.root_cause_analysis.root_cause_analysis">
+<span class="sig-prename descclassname"><span class="pre">peppermining.conformance.root_cause_analysis.</span></span><span class="sig-name descname"><span class="pre">root_cause_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/conformance/root_cause_analysis.html#root_cause_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.conformance.root_cause_analysis.root_cause_analysis" title="Permalink to this definition"></a></dt>
+<dd><p>Root Cause Analysis of an event log.</p>
+<p>The root cause analysis aims to find process errors and their causes and analyze them.
+These analyses make it possible to determine the proportion of errors found that have the same cause.
+Automated root cause analysis, consisting in analysing the cases attributes and return the most frequent datas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pepper_data</strong> – It this should be a PepperMining or PepperFilter object.</p></li>
+<li><p><strong>top</strong> (<em>int</em><em>, </em><em>Default: 5</em>) – Choose the number of top frequent datas.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root_cause_analysis</span><span class="p">(</span><span class="n">pm</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-peppermining.conformance">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-peppermining.conformance" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Thober Detofeno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

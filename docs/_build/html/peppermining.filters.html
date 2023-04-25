@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>peppermining.filters package &mdash; peppermining 0.1.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            peppermining
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">peppermining.filters package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-peppermining.filters.case_activity_filter">peppermining.filters.case_activity_filter module</a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_activity_filter.CaseActivityFilter"><code class="docutils literal notranslate"><span class="pre">CaseActivityFilter</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_activity_filter.CaseActivityFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseActivityFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">CaseActivityFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.filters.case_between_time_filter">peppermining.filters.case_between_time_filter module</a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_between_time_filter.CaseBetweenTimeFilter"><code class="docutils literal notranslate"><span class="pre">CaseBetweenTimeFilter</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_between_time_filter.CaseBetweenTimeFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseBetweenTimeFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">CaseBetweenTimeFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.filters.case_end_activity_filter">peppermining.filters.case_end_activity_filter module</a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_end_activity_filter.CaseEndActivityFilter"><code class="docutils literal notranslate"><span class="pre">CaseEndActivityFilter</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_end_activity_filter.CaseEndActivityFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseEndActivityFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">CaseEndActivityFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.filters.case_filter">peppermining.filters.case_filter module</a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_filter.CaseFilter"><code class="docutils literal notranslate"><span class="pre">CaseFilter</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_filter.CaseFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">CaseFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.filters.case_size_filter">peppermining.filters.case_size_filter module</a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_size_filter.CaseSizeFilter"><code class="docutils literal notranslate"><span class="pre">CaseSizeFilter</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_size_filter.CaseSizeFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseSizeFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">CaseSizeFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.filters.case_start_activity_filter">peppermining.filters.case_start_activity_filter module</a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_start_activity_filter.CaseStartActivityFilter"><code class="docutils literal notranslate"><span class="pre">CaseStartActivityFilter</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.filters.case_start_activity_filter.CaseStartActivityFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseStartActivityFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">CaseStartActivityFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.filters.pepper_filter">peppermining.filters.pepper_filter module</a><ul>
+<li><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter"><code class="docutils literal notranslate"><span class="pre">PepperFilter</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter._component"><code class="docutils literal notranslate"><span class="pre">PepperFilter._component</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter._mode"><code class="docutils literal notranslate"><span class="pre">PepperFilter._mode</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter.component"><code class="docutils literal notranslate"><span class="pre">PepperFilter.component()</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">PepperFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter.set_event_data_by_case_list"><code class="docutils literal notranslate"><span class="pre">PepperFilter.set_event_data_by_case_list()</span></code></a></li>
+<li><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter.set_case_data_by_case_list"><code class="docutils literal notranslate"><span class="pre">PepperFilter.set_case_data_by_case_list()</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">PepperFilter.component</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">PepperFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">PepperFilter.set_case_data_by_case_list()</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">PepperFilter.set_event_data_by_case_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.filters.variant_filter">peppermining.filters.variant_filter module</a><ul>
+<li><a class="reference internal" href="#peppermining.filters.variant_filter.VariantFilter"><code class="docutils literal notranslate"><span class="pre">VariantFilter</span></code></a><ul>
+<li><a class="reference internal" href="#peppermining.filters.variant_filter.VariantFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">VariantFilter.get_filter()</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">VariantFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-peppermining.filters">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">peppermining</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">peppermining.filters package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/peppermining.filters.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="peppermining-filters-package">
+<h1>peppermining.filters package<a class="headerlink" href="#peppermining-filters-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-peppermining.filters.case_activity_filter">
+<span id="peppermining-filters-case-activity-filter-module"></span><h2>peppermining.filters.case_activity_filter module<a class="headerlink" href="#module-peppermining.filters.case_activity_filter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.filters.case_activity_filter.CaseActivityFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.filters.case_activity_filter.</span></span><span class="sig-name descname"><span class="pre">CaseActivityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">activities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'contain'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_activity_filter.html#CaseActivityFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_activity_filter.CaseActivityFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PepperFilter</span></code></a></p>
+<p>Filter on activities.</p>
+<p>The filter keeps only the cases that with specific activities.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.case_activity_filter.CaseActivityFilter.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_activity_filter.html#CaseActivityFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_activity_filter.CaseActivityFilter.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">CaseActivityFilter</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;examine casually&#39;</span><span class="p">,</span> <span class="s1">&#39;check ticket&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">CaseActivityFilter</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;reject request&#39;</span><span class="p">],</span> <span class="s1">&#39;not contain&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_filter</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/filters/case_activity_filter.html#CaseActivityFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.filters.case_between_time_filter">
+<span id="peppermining-filters-case-between-time-filter-module"></span><h2>peppermining.filters.case_between_time_filter module<a class="headerlink" href="#module-peppermining.filters.case_between_time_filter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.filters.case_between_time_filter.CaseBetweenTimeFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.filters.case_between_time_filter.</span></span><span class="sig-name descname"><span class="pre">CaseBetweenTimeFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime64</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">numpy.datetime64('1677-09-21T00:12:43.145224')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime64</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">numpy.datetime64('2262-04-11T23:47:16.854775')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_between_time_filter.html#CaseBetweenTimeFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_between_time_filter.CaseBetweenTimeFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PepperFilter</span></code></a></p>
+<p>Filter the cases between on time frame.</p>
+<p>Keep the cases that are starting in a specific interval time frame.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.case_between_time_filter.CaseBetweenTimeFilter.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_between_time_filter.html#CaseBetweenTimeFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_between_time_filter.CaseBetweenTimeFilter.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">CaseBetweenTimeFilter</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="s1">&#39;2022-02-02T00:00:00&#39;</span><span class="p">,</span> <span class="s1">&#39;2022-02-04T23:59:59&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">CaseFilter</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_filter</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/filters/case_between_time_filter.html#CaseBetweenTimeFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.filters.case_end_activity_filter">
+<span id="peppermining-filters-case-end-activity-filter-module"></span><h2>peppermining.filters.case_end_activity_filter module<a class="headerlink" href="#module-peppermining.filters.case_end_activity_filter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.filters.case_end_activity_filter.CaseEndActivityFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.filters.case_end_activity_filter.</span></span><span class="sig-name descname"><span class="pre">CaseEndActivityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">activities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'contain'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_end_activity_filter.html#CaseEndActivityFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_end_activity_filter.CaseEndActivityFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PepperFilter</span></code></a></p>
+<p>Filter on end activities.</p>
+<p>The filter keeps only the cases that end with specific activities.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.case_end_activity_filter.CaseEndActivityFilter.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_end_activity_filter.html#CaseEndActivityFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_end_activity_filter.CaseEndActivityFilter.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">CaseEndActivityFilter</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pay compensation&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">CaseFilter</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s1">&#39;not contain&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_filter</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/filters/case_end_activity_filter.html#CaseEndActivityFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.filters.case_filter">
+<span id="peppermining-filters-case-filter-module"></span><h2>peppermining.filters.case_filter module<a class="headerlink" href="#module-peppermining.filters.case_filter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.filters.case_filter.CaseFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.filters.case_filter.</span></span><span class="sig-name descname"><span class="pre">CaseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'contain'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_filter.html#CaseFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_filter.CaseFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PepperFilter</span></code></a></p>
+<p>Case Filter.</p>
+<p>The case filter keeps only the cases included in a list.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.case_filter.CaseFilter.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_filter.html#CaseFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_filter.CaseFilter.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">CaseFilter</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">CaseFilter</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="s2">&quot;not contain&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_filter</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/filters/case_filter.html#CaseFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.filters.case_size_filter">
+<span id="peppermining-filters-case-size-filter-module"></span><h2>peppermining.filters.case_size_filter module<a class="headerlink" href="#module-peppermining.filters.case_size_filter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.filters.case_size_filter.CaseSizeFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.filters.case_size_filter.</span></span><span class="sig-name descname"><span class="pre">CaseSizeFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Decimal('Infinity')</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_size_filter.html#CaseSizeFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_size_filter.CaseSizeFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PepperFilter</span></code></a></p>
+<p>Case Size Filter.</p>
+<p>The case size filter keeps only the cases in the log with a number of events included in a range specified.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.case_size_filter.CaseSizeFilter.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_size_filter.html#CaseSizeFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_size_filter.CaseSizeFilter.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">CaseSizeFilter</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">CaseFilter</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_filter</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/filters/case_size_filter.html#CaseSizeFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.filters.case_start_activity_filter">
+<span id="peppermining-filters-case-start-activity-filter-module"></span><h2>peppermining.filters.case_start_activity_filter module<a class="headerlink" href="#module-peppermining.filters.case_start_activity_filter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.filters.case_start_activity_filter.CaseStartActivityFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.filters.case_start_activity_filter.</span></span><span class="sig-name descname"><span class="pre">CaseStartActivityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">activities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'contain'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_start_activity_filter.html#CaseStartActivityFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_start_activity_filter.CaseStartActivityFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PepperFilter</span></code></a></p>
+<p>Filter on start activities.</p>
+<p>The filter keeps only the cases that start with specific activities.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.case_start_activity_filter.CaseStartActivityFilter.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/case_start_activity_filter.html#CaseStartActivityFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.case_start_activity_filter.CaseStartActivityFilter.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">CaseStartActivityFilter</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;register request&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">CaseFilter</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s1">&#39;not contain&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_filter</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/filters/case_start_activity_filter.html#CaseStartActivityFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.filters.pepper_filter">
+<span id="peppermining-filters-pepper-filter-module"></span><h2>peppermining.filters.pepper_filter module<a class="headerlink" href="#module-peppermining.filters.pepper_filter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.filters.pepper_filter.PepperFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.filters.pepper_filter.</span></span><span class="sig-name descname"><span class="pre">PepperFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pepper_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.pepper.Pepper" title="peppermining.pepper.Pepper"><span class="pre">Pepper</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/pepper_filter.html#PepperFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.pepper_filter.PepperFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="peppermining.html#peppermining.pepper.Pepper" title="peppermining.pepper.Pepper"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pepper</span></code></a></p>
+<p>The PepperFilter declares common operations for the Filters of PepperMining.</p>
+<p>PepperMining has various specific methods to filter an event log:
+(1) Case Filter: The case filter keeps only the cases included in a list.
+(2) Case Size Filter: The case size filter keeps only the cases in the log with a number of events included in a range specified.
+(3) Filter the cases between on time frame: Keep the cases that are starting in a specific interval time frame.
+(4) Filter on start activities: The filter keeps only the cases that start with specific activities.
+(5) Filter on end activities: The filter keeps only the cases that end with specific activities.
+(6) Activity selection: Select cases that flow or don’t flow through specified activities.
+(7) Variant Filter: Keep the cases and logs that are in specified variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.filters.pepper_filter.PepperFilter._component">
+<span class="sig-name descname"><span class="pre">_component</span></span><a class="headerlink" href="#peppermining.filters.pepper_filter.PepperFilter._component" title="Permalink to this definition"></a></dt>
+<dd><p>PepperMining or PepperFilter object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="peppermining.html#peppermining.pepper.Pepper" title="peppermining.pepper.Pepper">peppermining.pepper.Pepper</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.filters.pepper_filter.PepperFilter._mode">
+<span class="sig-name descname"><span class="pre">_mode</span></span><a class="headerlink" href="#peppermining.filters.pepper_filter.PepperFilter._mode" title="Permalink to this definition"></a></dt>
+<dd><p>Modality of filtering (‘contain’ or ‘not contain’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.pepper_filter.PepperFilter.component">
+<span class="sig-name descname"><span class="pre">component</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#peppermining.filters.pepper_filter.PepperFilter.component" title="Permalink to this definition"></a></dt>
+<dd><p>The Decorator delegates all work to the wrapped component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.pepper_filter.PepperFilter.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/pepper_filter.html#PepperFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.pepper_filter.PepperFilter.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Decorator (get_filter) that call parent implementation of the operation, instead of calling the wrapped object directly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.pepper_filter.PepperFilter.set_event_data_by_case_list">
+<span class="sig-name descname"><span class="pre">set_event_data_by_case_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/pepper_filter.html#PepperFilter.set_event_data_by_case_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.pepper_filter.PepperFilter.set_event_data_by_case_list" title="Permalink to this definition"></a></dt>
+<dd><p>Filters the event log that keeps only the cases included in case list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.pepper_filter.PepperFilter.set_case_data_by_case_list">
+<span class="sig-name descname"><span class="pre">set_case_data_by_case_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/pepper_filter.html#PepperFilter.set_case_data_by_case_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.pepper_filter.PepperFilter.set_case_data_by_case_list" title="Permalink to this definition"></a></dt>
+<dd><p>Filters the cases data that included in case list.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id6">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">component</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="peppermining.html#peppermining.pepper.Pepper" title="peppermining.pepper.Pepper"><span class="pre">Pepper</span></a></em><a class="headerlink" href="#id6" title="Permalink to this definition"></a></dt>
+<dd><p>The Decorator delegates all work to the wrapped component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PepperMining or PepperFilter object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="peppermining.html#peppermining.pepper.Pepper" title="peppermining.pepper.Pepper">Pepper</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/filters/pepper_filter.html#PepperFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id7" title="Permalink to this definition"></a></dt>
+<dd><p>Decorator (get_filter) that call parent implementation of the operation, instead of calling the wrapped object directly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">set_case_data_by_case_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/filters/pepper_filter.html#PepperFilter.set_case_data_by_case_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id8" title="Permalink to this definition"></a></dt>
+<dd><p>Filters the cases data that included in case list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>case_list</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em>) – List of cases that gonna filter.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">set_event_data_by_case_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/filters/pepper_filter.html#PepperFilter.set_event_data_by_case_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id9" title="Permalink to this definition"></a></dt>
+<dd><p>Filters the event log that keeps only the cases included in case list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>case_list</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em>) – List of cases that gonna filter.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.filters.variant_filter">
+<span id="peppermining-filters-variant-filter-module"></span><h2>peppermining.filters.variant_filter module<a class="headerlink" href="#module-peppermining.filters.variant_filter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.filters.variant_filter.VariantFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.filters.variant_filter.</span></span><span class="sig-name descname"><span class="pre">VariantFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="peppermining.html#peppermining.peppermining.PepperMining" title="peppermining.peppermining.PepperMining"><span class="pre">PepperMining</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><span class="pre">PepperFilter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">variant_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'contain'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/variant_filter.html#VariantFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.variant_filter.VariantFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#peppermining.filters.pepper_filter.PepperFilter" title="peppermining.filters.pepper_filter.PepperFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PepperFilter</span></code></a></p>
+<p>Variant Filter.</p>
+<p>The variant filter keeps only the variants included in a list.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.filters.variant_filter.VariantFilter.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/filters/variant_filter.html#VariantFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.filters.variant_filter.VariantFilter.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">PepperVariant</span><span class="p">(</span><span class="n">pm</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">variant_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">get_variants</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;key&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">VariantFilter</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">variant_list</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">variant_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">get_variants</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;key&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">VariantFilter</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">variant_list</span><span class="p">,</span> <span class="s2">&quot;not contain&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">.</span><span class="n">get_filter</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/filters/variant_filter.html#VariantFilter.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id10" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filters apply in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.filters">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-peppermining.filters" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Thober Detofeno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

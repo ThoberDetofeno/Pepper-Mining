@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>peppermining.conformance.root_cause_analysis &mdash; peppermining 0.1.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            peppermining
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">peppermining</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">peppermining.conformance.root_cause_analysis</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for peppermining.conformance.root_cause_analysis</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">peppermining.utils.enum</span> <span class="kn">import</span> <span class="n">EventColumn</span>
+<span class="kn">from</span> <span class="nn">peppermining.filters.pepper_filter</span> <span class="kn">import</span> <span class="n">PepperFilter</span>
+<span class="kn">from</span> <span class="nn">peppermining.peppermining</span> <span class="kn">import</span> <span class="n">PepperMining</span>
+
+
+<div class="viewcode-block" id="root_cause_analysis"><a class="viewcode-back" href="../../../peppermining.conformance.html#peppermining.conformance.root_cause_analysis.root_cause_analysis">[docs]</a><span class="k">def</span> <span class="nf">root_cause_analysis</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">PepperMining</span><span class="p">,</span> <span class="n">PepperFilter</span><span class="p">],</span> <span class="n">top</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Root Cause Analysis of an event log.</span>
+
+<span class="sd">    The root cause analysis aims to find process errors and their causes and analyze them.</span>
+<span class="sd">    These analyses make it possible to determine the proportion of errors found that have the same cause.</span>
+<span class="sd">    Automated root cause analysis, consisting in analysing the cases attributes and return the most frequent datas.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pepper_data</span>
+<span class="sd">        It this should be a PepperMining or PepperFilter object.</span>
+<span class="sd">    top: int, Default: 5</span>
+<span class="sd">        Choose the number of top frequent datas.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; pm = PepperMining()</span>
+<span class="sd">    &gt;&gt;&gt; ...</span>
+<span class="sd">    &gt;&gt;&gt; root_cause_analysis(pm)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df_root_case</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">case_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get_cases</span><span class="p">()</span>
+    <span class="c1"># Analysis Root Causes</span>
+    <span class="n">column_list</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">column</span><span class="p">:</span> <span class="n">column</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="p">],</span> <span class="nb">list</span><span class="p">(</span><span class="n">case_data</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+    <span class="n">column_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">column_list</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col_name</span> <span class="ow">in</span> <span class="n">column_list</span><span class="p">:</span>
+        <span class="n">root_cause</span> <span class="o">=</span> <span class="n">case_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">col_name</span><span class="p">)[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;number_of_case&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;number_of_case&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">root_cause</span><span class="p">[</span><span class="s1">&#39;percent_of_case&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">root_cause</span><span class="p">[[</span><span class="s1">&#39;number_of_case&#39;</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">root_cause</span><span class="p">[</span><span class="s1">&#39;number_of_case&#39;</span><span class="p">])</span>
+        <span class="n">root_cause</span> <span class="o">=</span> <span class="n">root_cause</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">col_name</span><span class="p">:</span> <span class="s2">&quot;values&quot;</span><span class="p">})</span>
+        <span class="n">root_cause</span> <span class="o">=</span> <span class="n">root_cause</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">top</span><span class="p">)</span>
+        <span class="n">new_root_cause</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="n">col_name</span><span class="p">,</span> <span class="n">root_cause</span><span class="p">]],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">col_name</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;column&#39;</span><span class="p">,</span> <span class="s1">&#39;root_cause&#39;</span><span class="p">])</span>
+        <span class="n">df_root_case</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">new_root_cause</span><span class="p">,</span> <span class="n">df_root_case</span><span class="o">.</span><span class="n">loc</span><span class="p">[:]])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df_root_case</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Thober Detofeno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
