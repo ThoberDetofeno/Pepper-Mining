@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>peppermining.conformance.process_model &mdash; peppermining 0.1.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            peppermining
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">peppermining</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">peppermining</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">peppermining.conformance.process_model</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for peppermining.conformance.process_model</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">peppermining.utils.enum</span> <span class="kn">import</span> <span class="n">ModelColumn</span>
+
+
+<div class="viewcode-block" id="ProcessModel"><a class="viewcode-back" href="../../../peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel">[docs]</a><span class="k">class</span> <span class="nc">ProcessModel</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Process Model represent the ideal model that used in the identification of validations and conformance.</span>
+
+<span class="sd">    A Process Model is a depiction of the flow of work and tasks for specific goals.</span>
+<span class="sd">    Process Models are important because they document existing processes and provide process knowledge.</span>
+<span class="sd">    In the Pepper Mining the Process Model represent the ideal model, or the model that defines when the cases are in compliance.</span>
+<span class="sd">    Each Process Model represent a process with Start and End.</span>
+
+<span class="sd">    Methods</span>
+<span class="sd">    -------</span>
+<span class="sd">    set_process_model</span>
+<span class="sd">        Input Process Model data.</span>
+<span class="sd">    read_process_model_csv</span>
+<span class="sd">        Import the CSV to process model data.</span>
+<span class="sd">    get_process_model</span>
+<span class="sd">        Return Process Model data.</span>
+<span class="sd">    clear_datas</span>
+<span class="sd">        Clear Process Model.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; data = {&#39;activity&#39;: [&#39;register request&#39;, &#39;check ticket&#39;, &#39;examine casually&#39;, &#39;decide&#39;, &#39;pay compensation&#39;],</span>
+<span class="sd">                &#39;sorting&#39;: [1, 2, 3, 4, 5]}</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.DataFrame(data, columns=[&#39;activity&#39;, &#39;sorting&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; md = ProcessModel()</span>
+<span class="sd">    &gt;&gt;&gt; md.set_process_model(df)</span>
+<span class="sd">    &gt;&gt;&gt; md.get_process_model()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Created Pepper Process Model object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()</span><span class="o">.</span><span class="n">clock_seq_low</span>
+
+<div class="viewcode-block" id="ProcessModel.set_process_model"><a class="viewcode-back" href="../../../peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel.set_process_model">[docs]</a>    <span class="k">def</span> <span class="nf">set_process_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Input Process Model data.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_data : pd.DataFrame</span>
+<span class="sd">            DataFrame with &#39;activity&#39; and &#39;sorting&#39; columns.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; data = {&#39;activity&#39;: [&#39;register request&#39;, &#39;check ticket&#39;, &#39;examine casually&#39;, &#39;decide&#39;, &#39;pay compensation&#39;],</span>
+<span class="sd">                    &#39;sorting&#39;: [1, 2, 3, 4, 5]}</span>
+<span class="sd">        &gt;&gt;&gt; df = pd.DataFrame(data, columns=[&#39;activity&#39;, &#39;sorting&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; md = ProcessModel()</span>
+<span class="sd">        &gt;&gt;&gt; md.set_process_model(df)</span>
+<span class="sd">        &gt;&gt;&gt; md.get_process_model()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__validate_process_model</span><span class="p">(</span><span class="n">p_data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProcessModel.get_process_model"><a class="viewcode-back" href="../../../peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel.get_process_model">[docs]</a>    <span class="k">def</span> <span class="nf">get_process_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return Process Model data.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        DataFrame</span>
+<span class="sd">            DataFrame with the process model data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_data</span></div>
+
+<div class="viewcode-block" id="ProcessModel.read_process_model_csv"><a class="viewcode-back" href="../../../peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel.read_process_model_csv">[docs]</a>    <span class="k">def</span> <span class="nf">read_process_model_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">separator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Import the CSV to process model data.</span>
+
+<span class="sd">        Import the CSV into a pandas DataFrame.</span>
+<span class="sd">        Convert the CSV into an process model Pandas DataFrame.</span>
+<span class="sd">        The first step is to import the CSV file and internal API validate and convert it to the process model.</span>
+<span class="sd">        See more infomation in the pandas documentation.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file_path : str</span>
+<span class="sd">            Any valid string path is acceptable.</span>
+<span class="sd">        separator : str</span>
+<span class="sd">            Delimiter used in CSV file.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; md = ProcessModel()</span>
+<span class="sd">        &gt;&gt;&gt; md.read_process_model_csv(&quot;tests/data/processmodel-example.csv&quot;, separator=&#39;;&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; md.get_process_model()</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">separator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_process_model</span><span class="p">(</span><span class="n">df</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProcessModel.clear_datas"><a class="viewcode-back" href="../../../peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel.clear_datas">[docs]</a>    <span class="k">def</span> <span class="nf">clear_datas</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clear Process Model.</span>
+
+<span class="sd">        Remove all rows and columns.</span>
+<span class="sd">        After this method is possible include a new Process Model to the object.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">__validate_process_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate Process Model.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_df : pd.DataFrame</span>
+<span class="sd">            DataFrame with case_id and another columns.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        DataFrame</span>
+<span class="sd">            DataFrame with the data valid.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            (1) Only Pandas DataFrame are allowed in Process Model.</span>
+<span class="sd">            (2) Has Process Model. It needs clear the datas.</span>
+<span class="sd">            (3) Not exists the column activity, the column activity is mandatory.</span>
+<span class="sd">            (4) Not exists the column sorting, the column sorting is mandatory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">p_df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only Pandas DataFrame are allowed in Process Model.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_data</span><span class="o">.</span><span class="n">empty</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Has event logs data. It needs clear the event logs. e.g. Use the method clear_datas.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ModelColumn</span><span class="o">.</span><span class="n">ACTIVITY</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">p_df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not exists the column </span><span class="si">{</span><span class="n">ModelColumn</span><span class="o">.</span><span class="n">ACTIVITY</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">, the column </span><span class="si">{</span><span class="n">ModelColumn</span><span class="o">.</span><span class="n">ACTIVITY</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is mandatory.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ModelColumn</span><span class="o">.</span><span class="n">SORTING</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">p_df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not exists the column </span><span class="si">{</span><span class="n">ModelColumn</span><span class="o">.</span><span class="n">SORTING</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">, the column </span><span class="si">{</span><span class="n">ModelColumn</span><span class="o">.</span><span class="n">SORTING</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is mandatory.&quot;</span><span class="p">)</span>
+        <span class="c1"># Add ID in ProcessModel</span>
+        <span class="n">p_df</span><span class="p">[</span><span class="n">ModelColumn</span><span class="o">.</span><span class="n">ID</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">return</span> <span class="n">p_df</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Thober Detofeno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>peppermining package &mdash; peppermining 0.1.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="peppermining.conformance package" href="peppermining.conformance.html" />
+    <link rel="prev" title="peppermining" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            peppermining
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">peppermining</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">peppermining package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html">peppermining.conformance package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html">peppermining.filters package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html">peppermining.kpi package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html">peppermining.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-peppermining.main">peppermining.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-peppermining.pepper">peppermining.pepper module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#peppermining.pepper.Pepper"><code class="docutils literal notranslate"><span class="pre">Pepper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-peppermining.peppermining">peppermining.peppermining module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#peppermining.peppermining.PepperMining"><code class="docutils literal notranslate"><span class="pre">PepperMining</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-peppermining">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html">peppermining.filters package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html">peppermining.kpi package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.utils.html">peppermining.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.html">peppermining.conformance package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.violation.html">peppermining.conformance.violation package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">peppermining</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">peppermining</a></li>
+      <li class="breadcrumb-item active">peppermining package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/peppermining.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="peppermining-package">
+<h1>peppermining package<a class="headerlink" href="#peppermining-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="peppermining.conformance.html">peppermining.conformance package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.violation.html">peppermining.conformance.violation package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.pepper_violation">peppermining.conformance.violation.pepper_violation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.run_by_same_user">peppermining.conformance.violation.run_by_same_user module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.undesired_activity">peppermining.conformance.violation.undesired_activity module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.undesired_connection">peppermining.conformance.violation.undesired_connection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.undesired_end">peppermining.conformance.violation.undesired_end module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation.undesired_start">peppermining.conformance.violation.undesired_start module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.violation.html#module-peppermining.conformance.violation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.html#module-peppermining.conformance.conformance">peppermining.conformance.conformance module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.conformance.Conformance"><code class="docutils literal notranslate"><span class="pre">Conformance</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.conformance.Conformance._component"><code class="docutils literal notranslate"><span class="pre">Conformance._component</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.conformance.Conformance._models"><code class="docutils literal notranslate"><span class="pre">Conformance._models</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.conformance.Conformance._conformance_list"><code class="docutils literal notranslate"><span class="pre">Conformance._conformance_list</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.conformance.Conformance.get_cases"><code class="docutils literal notranslate"><span class="pre">Conformance.get_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.conformance.Conformance.get_summary"><code class="docutils literal notranslate"><span class="pre">Conformance.get_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.conformance.Conformance.diagnostics"><code class="docutils literal notranslate"><span class="pre">Conformance.diagnostics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#id0"><code class="docutils literal notranslate"><span class="pre">Conformance.diagnostics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#id1"><code class="docutils literal notranslate"><span class="pre">Conformance.get_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#id2"><code class="docutils literal notranslate"><span class="pre">Conformance.get_summary()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.html#module-peppermining.conformance.process_model">peppermining.conformance.process_model module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel"><code class="docutils literal notranslate"><span class="pre">ProcessModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel.set_process_model"><code class="docutils literal notranslate"><span class="pre">ProcessModel.set_process_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel.read_process_model_csv"><code class="docutils literal notranslate"><span class="pre">ProcessModel.read_process_model_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel.get_process_model"><code class="docutils literal notranslate"><span class="pre">ProcessModel.get_process_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.process_model.ProcessModel.clear_datas"><code class="docutils literal notranslate"><span class="pre">ProcessModel.clear_datas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#id3"><code class="docutils literal notranslate"><span class="pre">ProcessModel.clear_datas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#id4"><code class="docutils literal notranslate"><span class="pre">ProcessModel.get_process_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#id5"><code class="docutils literal notranslate"><span class="pre">ProcessModel.read_process_model_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.conformance.html#id6"><code class="docutils literal notranslate"><span class="pre">ProcessModel.set_process_model()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.html#module-peppermining.conformance.root_cause_analysis">peppermining.conformance.root_cause_analysis module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.conformance.html#peppermining.conformance.root_cause_analysis.root_cause_analysis"><code class="docutils literal notranslate"><span class="pre">root_cause_analysis()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.conformance.html#module-peppermining.conformance">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peppermining.filters.html">peppermining.filters package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters.case_activity_filter">peppermining.filters.case_activity_filter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_activity_filter.CaseActivityFilter"><code class="docutils literal notranslate"><span class="pre">CaseActivityFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_activity_filter.CaseActivityFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseActivityFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id0"><code class="docutils literal notranslate"><span class="pre">CaseActivityFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters.case_between_time_filter">peppermining.filters.case_between_time_filter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_between_time_filter.CaseBetweenTimeFilter"><code class="docutils literal notranslate"><span class="pre">CaseBetweenTimeFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_between_time_filter.CaseBetweenTimeFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseBetweenTimeFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id1"><code class="docutils literal notranslate"><span class="pre">CaseBetweenTimeFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters.case_end_activity_filter">peppermining.filters.case_end_activity_filter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_end_activity_filter.CaseEndActivityFilter"><code class="docutils literal notranslate"><span class="pre">CaseEndActivityFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_end_activity_filter.CaseEndActivityFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseEndActivityFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id2"><code class="docutils literal notranslate"><span class="pre">CaseEndActivityFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters.case_filter">peppermining.filters.case_filter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_filter.CaseFilter"><code class="docutils literal notranslate"><span class="pre">CaseFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_filter.CaseFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id3"><code class="docutils literal notranslate"><span class="pre">CaseFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters.case_size_filter">peppermining.filters.case_size_filter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_size_filter.CaseSizeFilter"><code class="docutils literal notranslate"><span class="pre">CaseSizeFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_size_filter.CaseSizeFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseSizeFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id4"><code class="docutils literal notranslate"><span class="pre">CaseSizeFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters.case_start_activity_filter">peppermining.filters.case_start_activity_filter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_start_activity_filter.CaseStartActivityFilter"><code class="docutils literal notranslate"><span class="pre">CaseStartActivityFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.case_start_activity_filter.CaseStartActivityFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">CaseStartActivityFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id5"><code class="docutils literal notranslate"><span class="pre">CaseStartActivityFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters.pepper_filter">peppermining.filters.pepper_filter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter"><code class="docutils literal notranslate"><span class="pre">PepperFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter._component"><code class="docutils literal notranslate"><span class="pre">PepperFilter._component</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter._mode"><code class="docutils literal notranslate"><span class="pre">PepperFilter._mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter.component"><code class="docutils literal notranslate"><span class="pre">PepperFilter.component()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">PepperFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter.set_event_data_by_case_list"><code class="docutils literal notranslate"><span class="pre">PepperFilter.set_event_data_by_case_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.pepper_filter.PepperFilter.set_case_data_by_case_list"><code class="docutils literal notranslate"><span class="pre">PepperFilter.set_case_data_by_case_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id6"><code class="docutils literal notranslate"><span class="pre">PepperFilter.component</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id7"><code class="docutils literal notranslate"><span class="pre">PepperFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id8"><code class="docutils literal notranslate"><span class="pre">PepperFilter.set_case_data_by_case_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id9"><code class="docutils literal notranslate"><span class="pre">PepperFilter.set_event_data_by_case_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters.variant_filter">peppermining.filters.variant_filter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.variant_filter.VariantFilter"><code class="docutils literal notranslate"><span class="pre">VariantFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#peppermining.filters.variant_filter.VariantFilter.get_filter"><code class="docutils literal notranslate"><span class="pre">VariantFilter.get_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.filters.html#id10"><code class="docutils literal notranslate"><span class="pre">VariantFilter.get_filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.filters.html#module-peppermining.filters">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peppermining.kpi.html">peppermining.kpi package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#module-peppermining.kpi.average_events_per_case">peppermining.kpi.average_events_per_case module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.average_events_per_case.AverageEventsPerCase"><code class="docutils literal notranslate"><span class="pre">AverageEventsPerCase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.average_events_per_case.AverageEventsPerCase.get_kpi"><code class="docutils literal notranslate"><span class="pre">AverageEventsPerCase.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id0"><code class="docutils literal notranslate"><span class="pre">AverageEventsPerCase.get_kpi()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#module-peppermining.kpi.number_of_activities">peppermining.kpi.number_of_activities module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_activities.NumberOfActivities"><code class="docutils literal notranslate"><span class="pre">NumberOfActivities</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_activities.NumberOfActivities.get_kpi"><code class="docutils literal notranslate"><span class="pre">NumberOfActivities.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_activities.NumberOfActivities.get_kpi_cases"><code class="docutils literal notranslate"><span class="pre">NumberOfActivities.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_activities.NumberOfActivities.get_kpi_variants"><code class="docutils literal notranslate"><span class="pre">NumberOfActivities.get_kpi_variants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id1"><code class="docutils literal notranslate"><span class="pre">NumberOfActivities.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id2"><code class="docutils literal notranslate"><span class="pre">NumberOfActivities.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id3"><code class="docutils literal notranslate"><span class="pre">NumberOfActivities.get_kpi_variants()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#module-peppermining.kpi.number_of_cases">peppermining.kpi.number_of_cases module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_cases.NumberOfCases"><code class="docutils literal notranslate"><span class="pre">NumberOfCases</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_cases.NumberOfCases.get_kpi"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_cases.NumberOfCases.get_kpi_variants"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_variants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_cases.NumberOfCases.get_kpi_activities"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_cases.NumberOfCases.get_kpi_per_year"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_per_year()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_cases.NumberOfCases.get_kpi_per_month"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_per_month()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_cases.NumberOfCases.get_kpi_per_day"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_per_day()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_cases.NumberOfCases.get_kpi_process_flow"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_process_flow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id4"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id5"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id6"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_per_day()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id7"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_per_month()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id8"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_per_year()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id9"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_process_flow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id10"><code class="docutils literal notranslate"><span class="pre">NumberOfCases.get_kpi_variants()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#module-peppermining.kpi.number_of_events">peppermining.kpi.number_of_events module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_events.NumberOfEvents"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_events.NumberOfEvents.get_kpi"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_events.NumberOfEvents.get_kpi_cases"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_events.NumberOfEvents.get_kpi_variants"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_variants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_events.NumberOfEvents.get_kpi_activities"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_events.NumberOfEvents.get_kpi_per_year"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_per_year()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_events.NumberOfEvents.get_kpi_per_month"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_per_month()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.number_of_events.NumberOfEvents.get_kpi_per_day"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_per_day()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id11"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id12"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id13"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id14"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_per_day()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id15"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_per_month()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id16"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_per_year()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id17"><code class="docutils literal notranslate"><span class="pre">NumberOfEvents.get_kpi_variants()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#module-peppermining.kpi.pepper_kpi">peppermining.kpi.pepper_kpi module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi"><code class="docutils literal notranslate"><span class="pre">PepperKpi</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi._component"><code class="docutils literal notranslate"><span class="pre">PepperKpi._component</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi._kpi_id"><code class="docutils literal notranslate"><span class="pre">PepperKpi._kpi_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi._kpi_name"><code class="docutils literal notranslate"><span class="pre">PepperKpi._kpi_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi.get_kpi"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi.get_kpi_event_log"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi_event_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi.get_kpi_cases"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi.get_kpi_variants"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi_variants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi.get_kpi_activities"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.pepper_kpi.PepperKpi.get_summary_df"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_summary_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id18"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id19"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id20"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id21"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi_event_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id22"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_kpi_variants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id23"><code class="docutils literal notranslate"><span class="pre">PepperKpi.get_summary_df()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#module-peppermining.kpi.rework">peppermining.kpi.rework module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.rework.Rework"><code class="docutils literal notranslate"><span class="pre">Rework</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.rework.Rework.get_kpi"><code class="docutils literal notranslate"><span class="pre">Rework.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.rework.Rework.get_kpi_cases"><code class="docutils literal notranslate"><span class="pre">Rework.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.rework.Rework.get_kpi_activities"><code class="docutils literal notranslate"><span class="pre">Rework.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id24"><code class="docutils literal notranslate"><span class="pre">Rework.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id25"><code class="docutils literal notranslate"><span class="pre">Rework.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id26"><code class="docutils literal notranslate"><span class="pre">Rework.get_kpi_cases()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#module-peppermining.kpi.throughput_time">peppermining.kpi.throughput_time module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.throughput_time.ThroughputTime"><code class="docutils literal notranslate"><span class="pre">ThroughputTime</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.throughput_time.ThroughputTime.get_kpi"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.throughput_time.ThroughputTime.get_kpi_event_log"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_event_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.throughput_time.ThroughputTime.get_kpi_cases"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.throughput_time.ThroughputTime.get_kpi_variants"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_variants()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.throughput_time.ThroughputTime.get_kpi_activities"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#peppermining.kpi.throughput_time.ThroughputTime.get_kpi_process_flow"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_process_flow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id27"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id28"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_activities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id29"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_cases()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id30"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_event_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id31"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_process_flow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.kpi.html#id32"><code class="docutils literal notranslate"><span class="pre">ThroughputTime.get_kpi_variants()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.kpi.html#module-peppermining.kpi">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peppermining.utils.html">peppermining.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.utils.html#module-peppermining.utils.enum">peppermining.utils.enum module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.EventColumn"><code class="docutils literal notranslate"><span class="pre">EventColumn</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.EventColumn.ACTIVITY"><code class="docutils literal notranslate"><span class="pre">EventColumn.ACTIVITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.EventColumn.CASE_ID"><code class="docutils literal notranslate"><span class="pre">EventColumn.CASE_ID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.EventColumn.EVENT_TIME"><code class="docutils literal notranslate"><span class="pre">EventColumn.EVENT_TIME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.EventColumn.USER"><code class="docutils literal notranslate"><span class="pre">EventColumn.USER</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart"><code class="docutils literal notranslate"><span class="pre">Flowchart</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.ACTIVITY"><code class="docutils literal notranslate"><span class="pre">Flowchart.ACTIVITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.ACTIVITY_FROM"><code class="docutils literal notranslate"><span class="pre">Flowchart.ACTIVITY_FROM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.ACTIVITY_SHAPE"><code class="docutils literal notranslate"><span class="pre">Flowchart.ACTIVITY_SHAPE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.ACTIVITY_TO"><code class="docutils literal notranslate"><span class="pre">Flowchart.ACTIVITY_TO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.EDGE_ARROWHEAD"><code class="docutils literal notranslate"><span class="pre">Flowchart.EDGE_ARROWHEAD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.EDGE_ARROWSIZE"><code class="docutils literal notranslate"><span class="pre">Flowchart.EDGE_ARROWSIZE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.EDGE_COLOR"><code class="docutils literal notranslate"><span class="pre">Flowchart.EDGE_COLOR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.EDGE_PENWIDTH"><code class="docutils literal notranslate"><span class="pre">Flowchart.EDGE_PENWIDTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.END_SHAPE"><code class="docutils literal notranslate"><span class="pre">Flowchart.END_SHAPE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.PROCESS_END"><code class="docutils literal notranslate"><span class="pre">Flowchart.PROCESS_END</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.PROCESS_START"><code class="docutils literal notranslate"><span class="pre">Flowchart.PROCESS_START</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Flowchart.START_SHAPE"><code class="docutils literal notranslate"><span class="pre">Flowchart.START_SHAPE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.KpiColumn"><code class="docutils literal notranslate"><span class="pre">KpiColumn</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.KpiColumn.KPI"><code class="docutils literal notranslate"><span class="pre">KpiColumn.KPI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.KpiColumn.VALUE"><code class="docutils literal notranslate"><span class="pre">KpiColumn.VALUE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ModelColumn"><code class="docutils literal notranslate"><span class="pre">ModelColumn</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ModelColumn.ACTIVITY"><code class="docutils literal notranslate"><span class="pre">ModelColumn.ACTIVITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ModelColumn.ID"><code class="docutils literal notranslate"><span class="pre">ModelColumn.ID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ModelColumn.SORTING"><code class="docutils literal notranslate"><span class="pre">ModelColumn.SORTING</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Variant"><code class="docutils literal notranslate"><span class="pre">Variant</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Variant.ACTIVITIES"><code class="docutils literal notranslate"><span class="pre">Variant.ACTIVITIES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Variant.ACT_CONN"><code class="docutils literal notranslate"><span class="pre">Variant.ACT_CONN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Variant.CASES"><code class="docutils literal notranslate"><span class="pre">Variant.CASES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Variant.KEY"><code class="docutils literal notranslate"><span class="pre">Variant.KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.Variant.SPLIT_SEP"><code class="docutils literal notranslate"><span class="pre">Variant.SPLIT_SEP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ViolationColumn"><code class="docutils literal notranslate"><span class="pre">ViolationColumn</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ViolationColumn.ACTIVITY"><code class="docutils literal notranslate"><span class="pre">ViolationColumn.ACTIVITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ViolationColumn.CASES"><code class="docutils literal notranslate"><span class="pre">ViolationColumn.CASES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ViolationColumn.NAME"><code class="docutils literal notranslate"><span class="pre">ViolationColumn.NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="peppermining.utils.html#peppermining.utils.enum.ViolationColumn.TYPE"><code class="docutils literal notranslate"><span class="pre">ViolationColumn.TYPE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="peppermining.utils.html#module-peppermining.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-peppermining.main">
+<span id="peppermining-main-module"></span><h2>peppermining.main module<a class="headerlink" href="#module-peppermining.main" title="Permalink to this heading"></a></h2>
+<p>from peppermining import PepperMining
+from filters.case_filter import CaseFilter
+from kpi.number_of_events import NumberOfEvents</p>
+<p>pm = PepperMining()
+pm.read_event_log_csv(“c:/Temp/base-peppermining/peppermining/tests/data/eventlog-example.csv”, separator=’;’, format_date=’%d/%m/%Y %H:%M’)
+pm.read_cases_csv(“c:/Temp/base-peppermining/peppermining/tests/data/case-example.csv”, separator=’;’)</p>
+<p>f1 = CaseFilter(pm, [1, 5, 7, 8])
+f1.get_event_log()
+f2 = CaseFilter(f1, [3])
+kp1 = NumberOfEvents(pm)
+kp1.get_kpi()
+pm.get_cases([‘NumberOfEvents’])</p>
+</section>
+<section id="module-peppermining.pepper">
+<span id="peppermining-pepper-module"></span><h2>peppermining.pepper module<a class="headerlink" href="#module-peppermining.pepper" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.pepper.</span></span><span class="sig-name descname"><span class="pre">Pepper</span></span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.pepper.Pepper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Pepper class declares common operations for both PepperMining and the PepperFilter.</p>
+<p>As long as the client works with PepperMining using this class, you’ll be able to pass it a proxy instead of a real subject.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.event_data">
+<span class="sig-name descname"><span class="pre">event_data</span></span><a class="headerlink" href="#peppermining.pepper.Pepper.event_data" title="Permalink to this definition"></a></dt>
+<dd><p>Event logs data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.case_data">
+<span class="sig-name descname"><span class="pre">case_data</span></span><a class="headerlink" href="#peppermining.pepper.Pepper.case_data" title="Permalink to this definition"></a></dt>
+<dd><p>Cases data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.activity_data">
+<span class="sig-name descname"><span class="pre">activity_data</span></span><a class="headerlink" href="#peppermining.pepper.Pepper.activity_data" title="Permalink to this definition"></a></dt>
+<dd><p>Activities data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.variant_data">
+<span class="sig-name descname"><span class="pre">variant_data</span></span><a class="headerlink" href="#peppermining.pepper.Pepper.variant_data" title="Permalink to this definition"></a></dt>
+<dd><p>Variants data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.get_event_log">
+<span class="sig-name descname"><span class="pre">get_event_log</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_event_log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.pepper.Pepper.get_event_log" title="Permalink to this definition"></a></dt>
+<dd><p>Return Event logs data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.get_cases">
+<span class="sig-name descname"><span class="pre">get_cases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_cases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.pepper.Pepper.get_cases" title="Permalink to this definition"></a></dt>
+<dd><p>Return Cases data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.get_activities">
+<span class="sig-name descname"><span class="pre">get_activities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_activities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.pepper.Pepper.get_activities" title="Permalink to this definition"></a></dt>
+<dd><p>Return Activities data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.get_summary">
+<span class="sig-name descname"><span class="pre">get_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.pepper.Pepper.get_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Return summary the events and cases.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.get_variants">
+<span class="sig-name descname"><span class="pre">get_variants</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_variants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.pepper.Pepper.get_variants" title="Permalink to this definition"></a></dt>
+<dd><p>Return Variants data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.get_filter">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.pepper.Pepper.get_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filter used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.pepper.Pepper.drawing">
+<span class="sig-name descname"><span class="pre">drawing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.drawing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.pepper.Pepper.drawing" title="Permalink to this definition"></a></dt>
+<dd><p>Return the activity interaction graph of event data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">drawing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_kpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NumberOfCases'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dot</span></span></span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.drawing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Return the activity interaction graph of event data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>label_kpi</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Choose a KPI allow for is showing in the edge.
+Options: NumberOfCases | ThroughputTimeMin | ThroughputTimeMax | ThroughputTimeMean | ThroughputTimeMedian | ThroughputTimeSum | ThroughputTimeStDev
+‘NumberOfCases’ = Number of cases
+‘ThroughputTimeMin’ = Throughput time (Min)
+‘ThroughputTimeMax’ = Throughput time (Max)
+‘ThroughputTimeMean’ = Throughput time (Mean)
+‘ThroughputTimeMedian’ = Throughput time (Median)
+‘ThroughputTimeSum’ = Throughput time (Sum)
+‘ThroughputTimeStDev’ = Throughput time (StDev)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return a graph using pydot objects.
+The pydot package is an interface to Graphviz.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pydot.Dot</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;c:/Temp/base-peppermining/peppermining/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;c:/Temp/base-peppermining/peppermining/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">get_cases</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">drawing</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s1">&#39;output.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">https</span></code></dt><dd><p>//pypi.org/project/pydot/</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">get_activities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_activities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>Return Activities data.</p>
+<p>Return the activities with metrics defined in the KPI module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kpi</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The a KPIs list. Choose the KPIs allow for the activities data.
+kpi = [‘NumberOfEvents’, ‘NumberOfCases’, ‘ThroughputTime’, ‘Rework’]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with the Activities data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">get_cases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_cases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Return Cases data.</p>
+<p>Return the cases with metrics defined in the KPI module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kpi</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The a KPIs list. Choose the KPIs allow for the case data.
+kpi = [‘NumberOfEvents’, ‘NumberOfActivities’, ‘ThroughputTime’, ‘Rework’]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with the Cases data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">get_event_log</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_event_log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>Return Event Logs data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame with the event logs data.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>Return the filter used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String with list the filters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">get_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['NumberOfEvents']</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Permalink to this definition"></a></dt>
+<dd><p>Return summary the events and cases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kpi</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The a KPIs list. Choose the KPIs allow for the summary.
+kpi = [‘NumberOfEvents’, ‘NumberOfActivities’, ‘NumberOfCases’, ‘AverageEventsPerCase’, ‘ThroughputTime’, ‘Rework’]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with the summary data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">get_variants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/peppermining/pepper.html#Pepper.get_variants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Permalink to this definition"></a></dt>
+<dd><p>Return Variants data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kpi</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – The a KPIs list. Choose the KPIs allow for the variants.
+kpi = [‘NumberOfEvents’, ‘NumberOfActivities’, ‘NumberOfCases’, ‘ThroughputTime’]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with the Variants data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining.peppermining">
+<span id="peppermining-peppermining-module"></span><h2>peppermining.peppermining module<a class="headerlink" href="#module-peppermining.peppermining" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="peppermining.peppermining.PepperMining">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">peppermining.peppermining.</span></span><span class="sig-name descname"><span class="pre">PepperMining</span></span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.peppermining.PepperMining" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#peppermining.pepper.Pepper" title="peppermining.pepper.Pepper"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pepper</span></code></a></p>
+<p>PepperMining is a open source Process Mining platform.</p>
+<p>Process mining refers to discovering knowledge about business processes from the automatic analysis of event logs.
+The first step to using the Pepper Mining is create the PepperMining object and add event logs.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.peppermining.PepperMining.set_event_log">
+<span class="sig-name descname"><span class="pre">set_event_log</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.set_event_log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.peppermining.PepperMining.set_event_log" title="Permalink to this definition"></a></dt>
+<dd><p>Input the event logs data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.peppermining.PepperMining.set_cases">
+<span class="sig-name descname"><span class="pre">set_cases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.set_cases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.peppermining.PepperMining.set_cases" title="Permalink to this definition"></a></dt>
+<dd><p>Input the cases data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.peppermining.PepperMining.clear_datas">
+<span class="sig-name descname"><span class="pre">clear_datas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.clear_datas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.peppermining.PepperMining.clear_datas" title="Permalink to this definition"></a></dt>
+<dd><p>Clear event log and cases.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.peppermining.PepperMining.clear_cases">
+<span class="sig-name descname"><span class="pre">clear_cases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.clear_cases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.peppermining.PepperMining.clear_cases" title="Permalink to this definition"></a></dt>
+<dd><p>Clear cases.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.peppermining.PepperMining.read_event_log_csv">
+<span class="sig-name descname"><span class="pre">read_event_log_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.read_event_log_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.peppermining.PepperMining.read_event_log_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Import the CSV to event logs data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="peppermining.peppermining.PepperMining.read_cases_csv">
+<span class="sig-name descname"><span class="pre">read_cases_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.read_cases_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#peppermining.peppermining.PepperMining.read_cases_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Import the CSV to cases data.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="go">            &#39;activity&#39;: [&#39;register request&#39;, &#39;check ticket&#39;, &#39;examine thoroughly&#39;, &#39;decide&#39;, &#39;reject request&#39;, &#39;register request&#39;,</span>
+<span class="go">                         &#39;check ticket&#39;, &#39;examine casually&#39;, &#39;decide&#39;],</span>
+<span class="go">            &#39;event_time&#39;: [&#39;2022-02-01 11:02:00&#39;, &#39;2022-02-02 10:06:00&#39;, &#39;2022-02-02 15:12:00&#39;, &#39;2022-02-03 11:18:00&#39;, &#39;2022-02-03 14:24:00&#39;,</span>
+<span class="go">                           &#39;2022-02-01 11:32:00&#39;, &#39;2022-02-01 12:12:00&#39;, &#39;2022-02-01 14:16:00&#39;, &#39;2022-02-03 11:22:00&#39;],</span>
+<span class="go">            &#39;user&#39;: [&#39;Pete&#39;, &#39;Sue&#39;, &#39;Mike&#39;, &#39;Sara&#39;, &#39;Pete&#39;, &#39;Mike&#39;, &#39;Mike&#39;, &#39;Sean&#39;, &#39;Sara&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;case_id&#39;</span><span class="p">,</span> <span class="s1">&#39;activity&#39;</span><span class="p">,</span> <span class="s1">&#39;event_time&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">set_event_log</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">get_event_log</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">clear_cases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.clear_cases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id7" title="Permalink to this definition"></a></dt>
+<dd><p>Clear cases.</p>
+<p>Reset the case data.
+After this method is possible include a new cases to the peppermining object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">clear_datas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.clear_datas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id8" title="Permalink to this definition"></a></dt>
+<dd><p>Clear event log and cases.</p>
+<p>Remove all rows and columns.
+After this method is possible include a new event logs to the peppermining object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">read_cases_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">';'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.read_cases_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id9" title="Permalink to this definition"></a></dt>
+<dd><p>Import the CSV to cases data.</p>
+<p>Import the CSV into a pandas DataFrame.
+Convert the CSV into a Cases Pandas DataFrame.
+The first step is to import the CSV file and internal API validate and convert it to the event log.
+See more infomation in the pandas documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Any valid string path is acceptable.</p></li>
+<li><p><strong>separator</strong> (<em>str</em>) – Delimiter used in CSV file.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;c:/Temp/base-peppermining/peppermining/tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span>
+<span class="go">                          format_date=&#39;%d/%m/%Y %H:%M&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_cases_csv</span><span class="p">(</span><span class="s2">&quot;c:/Temp/base-peppermining/peppermining/tests/data/case-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">get_cases</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">https</span></code></dt><dd><p>//pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">read_event_log_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">';'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.read_event_log_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id10" title="Permalink to this definition"></a></dt>
+<dd><p>Import the CSV to event logs data.</p>
+<p>Import the CSV into a pandas DataFrame.
+Convert the CSV into an event log Pandas DataFrame.
+The first step is to import the CSV file and internal API validate and convert it to the event log.
+See more infomation in the pandas documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Any valid string path is acceptable.</p></li>
+<li><p><strong>separator</strong> (<em>str</em>) – Delimiter used in CSV file</p></li>
+<li><p><strong>format_date</strong> (<em>str</em>) – The strftime to parse time, e.g. “%d/%m/%Y %H:%M”. format=’%d/%m/%Y %H:%M’
+If None then is used pd.to_datetime without format.
+See strftime documentation for more information on choices.
+<a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior</a></p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">read_event_log_csv</span><span class="p">(</span><span class="s2">&quot;tests/data/eventlog-example.csv&quot;</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">get_event_data</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">https</span></code></dt><dd><p>//pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">set_cases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cases</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.set_cases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id11" title="Permalink to this definition"></a></dt>
+<dd><p>Input cases to event logs.</p>
+<p>Input the cases of a pandas DataFrame.
+The DataFrame must be the column ‘case_id’.
+Is not mandatory add cases to use the PepperMining.
+In order to have a good experience in the root cause analysis, it is important include more information for the cases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cases</strong> (<em>pd.DataFrame</em>) – DataFrame with ‘case_id’ column.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+<span class="go">            &#39;product&#39;: [&#39;Pumpkin&#39;, &#39;Carrots&#39;, &#39;Chilli peppers&#39;, &#39;Ginger&#39;, &#39;Mushrooms&#39;, &#39;Potatoes&#39;, &#39;Fresh herbs&#39;, &#39;Chokos&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;case_id&#39;</span><span class="p">,</span> <span class="s1">&#39;product&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">set_event_log</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">get_event_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">set_event_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_log</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/peppermining/peppermining.html#PepperMining.set_event_log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id12" title="Permalink to this definition"></a></dt>
+<dd><p>Input the event logs data.</p>
+<p>Input the event logs of a pandas DataFrame.
+The DataFrame must be the columns: ‘case_id’, ‘activity’ and ‘event_time’.
+The column ‘user’ is used in some functions, but this it not mandatory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event_log</strong> (<em>pd.DataFrame</em>) – DataFrame with ‘case_id’, ‘activity’, and ‘event_time’ columns.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="go">            &#39;activity&#39;: [&#39;register request&#39;, &#39;check ticket&#39;, &#39;examine thoroughly&#39;, &#39;decide&#39;, &#39;reject request&#39;, &#39;register request&#39;,</span>
+<span class="go">                         &#39;check ticket&#39;, &#39;examine casually&#39;, &#39;decide&#39;],</span>
+<span class="go">            &#39;event_time&#39;: [&#39;2022-02-01 11:02:00&#39;, &#39;2022-02-02 10:06:00&#39;, &#39;2022-02-02 15:12:00&#39;, &#39;2022-02-03 11:18:00&#39;, &#39;2022-02-03 14:24:00&#39;,</span>
+<span class="go">                           &#39;2022-02-01 11:32:00&#39;, &#39;2022-02-01 12:12:00&#39;, &#39;2022-02-01 14:16:00&#39;, &#39;2022-02-03 11:22:00&#39;],</span>
+<span class="go">            &#39;user&#39;: [&#39;Pete&#39;, &#39;Sue&#39;, &#39;Mike&#39;, &#39;Sara&#39;, &#39;Pete&#39;, &#39;Mike&#39;, &#39;Mike&#39;, &#39;Sean&#39;, &#39;Sara&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;case_id&#39;</span><span class="p">,</span> <span class="s1">&#39;activity&#39;</span><span class="p">,</span> <span class="s1">&#39;event_time&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span> <span class="o">=</span> <span class="n">PepperMining</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">set_event_log</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">get_event_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-peppermining">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-peppermining" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="peppermining" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="peppermining.conformance.html" class="btn btn-neutral float-right" title="peppermining.conformance package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Thober Detofeno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

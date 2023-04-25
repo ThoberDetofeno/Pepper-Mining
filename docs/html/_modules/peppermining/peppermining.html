@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>peppermining.peppermining &mdash; peppermining 0.1.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            peppermining
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">peppermining</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">peppermining</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">peppermining.peppermining</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for peppermining.peppermining</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">pandas.api.types</span> <span class="kn">import</span> <span class="n">is_datetime64_any_dtype</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">peppermining.utils.enum</span> <span class="kn">import</span> <span class="n">EventColumn</span>
+<span class="kn">from</span> <span class="nn">peppermining.pepper</span> <span class="kn">import</span> <span class="n">Pepper</span>
+
+
+<div class="viewcode-block" id="PepperMining"><a class="viewcode-back" href="../../peppermining.html#peppermining.peppermining.PepperMining">[docs]</a><span class="k">class</span> <span class="nc">PepperMining</span><span class="p">(</span><span class="n">Pepper</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;PepperMining is a open source Process Mining platform.</span>
+
+<span class="sd">    Process mining refers to discovering knowledge about business processes from the automatic analysis of event logs.</span>
+<span class="sd">    The first step to using the Pepper Mining is create the PepperMining object and add event logs.</span>
+
+<span class="sd">    Methods</span>
+<span class="sd">    -------</span>
+<span class="sd">    set_event_log</span>
+<span class="sd">        Input the event logs data.</span>
+<span class="sd">    set_cases</span>
+<span class="sd">        Input the cases data.</span>
+<span class="sd">    clear_datas</span>
+<span class="sd">        Clear event log and cases.</span>
+<span class="sd">    clear_cases</span>
+<span class="sd">        Clear cases.</span>
+<span class="sd">    read_event_log_csv</span>
+<span class="sd">        Import the CSV to event logs data.</span>
+<span class="sd">    read_cases_csv</span>
+<span class="sd">        Import the CSV to cases data.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; data = {&#39;case_id&#39;: [1, 1, 1, 1, 1, 2, 2, 2, 2],</span>
+<span class="sd">                &#39;activity&#39;: [&#39;register request&#39;, &#39;check ticket&#39;, &#39;examine thoroughly&#39;, &#39;decide&#39;, &#39;reject request&#39;, &#39;register request&#39;,</span>
+<span class="sd">                             &#39;check ticket&#39;, &#39;examine casually&#39;, &#39;decide&#39;],</span>
+<span class="sd">                &#39;event_time&#39;: [&#39;2022-02-01 11:02:00&#39;, &#39;2022-02-02 10:06:00&#39;, &#39;2022-02-02 15:12:00&#39;, &#39;2022-02-03 11:18:00&#39;, &#39;2022-02-03 14:24:00&#39;,</span>
+<span class="sd">                               &#39;2022-02-01 11:32:00&#39;, &#39;2022-02-01 12:12:00&#39;, &#39;2022-02-01 14:16:00&#39;, &#39;2022-02-03 11:22:00&#39;],</span>
+<span class="sd">                &#39;user&#39;: [&#39;Pete&#39;, &#39;Sue&#39;, &#39;Mike&#39;, &#39;Sara&#39;, &#39;Pete&#39;, &#39;Mike&#39;, &#39;Mike&#39;, &#39;Sean&#39;, &#39;Sara&#39;]}</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.DataFrame(data, columns=[&#39;case_id&#39;, &#39;activity&#39;, &#39;event_time&#39;, &#39;user&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; pm = PepperMining()</span>
+<span class="sd">    &gt;&gt;&gt; pm.set_event_log(df)</span>
+<span class="sd">    &gt;&gt;&gt; pm.get_event_log()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># TODO: Read IEEE XES files. http://www.xes-standard.org/</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Created PepperMining object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__format_date_csv</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="PepperMining.set_event_log"><a class="viewcode-back" href="../../peppermining.html#peppermining.peppermining.PepperMining.set_event_log">[docs]</a>    <span class="k">def</span> <span class="nf">set_event_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event_log</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Input the event logs data.</span>
+
+<span class="sd">        Input the event logs of a pandas DataFrame.</span>
+<span class="sd">        The DataFrame must be the columns: &#39;case_id&#39;, &#39;activity&#39; and &#39;event_time&#39;.</span>
+<span class="sd">        The column &#39;user&#39; is used in some functions, but this it not mandatory.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        event_log : pd.DataFrame</span>
+<span class="sd">            DataFrame with &#39;case_id&#39;, &#39;activity&#39;, and &#39;event_time&#39; columns.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; data = {&#39;case_id&#39;: [1, 1, 1, 1, 1, 2, 2, 2, 2],</span>
+<span class="sd">                    &#39;activity&#39;: [&#39;register request&#39;, &#39;check ticket&#39;, &#39;examine thoroughly&#39;, &#39;decide&#39;, &#39;reject request&#39;, &#39;register request&#39;,</span>
+<span class="sd">                                 &#39;check ticket&#39;, &#39;examine casually&#39;, &#39;decide&#39;],</span>
+<span class="sd">                    &#39;event_time&#39;: [&#39;2022-02-01 11:02:00&#39;, &#39;2022-02-02 10:06:00&#39;, &#39;2022-02-02 15:12:00&#39;, &#39;2022-02-03 11:18:00&#39;, &#39;2022-02-03 14:24:00&#39;,</span>
+<span class="sd">                                   &#39;2022-02-01 11:32:00&#39;, &#39;2022-02-01 12:12:00&#39;, &#39;2022-02-01 14:16:00&#39;, &#39;2022-02-03 11:22:00&#39;],</span>
+<span class="sd">                    &#39;user&#39;: [&#39;Pete&#39;, &#39;Sue&#39;, &#39;Mike&#39;, &#39;Sara&#39;, &#39;Pete&#39;, &#39;Mike&#39;, &#39;Mike&#39;, &#39;Sean&#39;, &#39;Sara&#39;]}</span>
+<span class="sd">        &gt;&gt;&gt; df = pd.DataFrame(data, columns=[&#39;case_id&#39;, &#39;activity&#39;, &#39;event_time&#39;, &#39;user&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; pm = PepperMining()</span>
+<span class="sd">        &gt;&gt;&gt; pm.set_event_log(df)</span>
+<span class="sd">        &gt;&gt;&gt; pm.get_event_data()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__validate_event_data</span><span class="p">(</span><span class="n">event_log</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">case_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event_data</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PepperMining.set_cases"><a class="viewcode-back" href="../../peppermining.html#peppermining.peppermining.PepperMining.set_cases">[docs]</a>    <span class="k">def</span> <span class="nf">set_cases</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cases</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Input cases to event logs.</span>
+
+<span class="sd">        Input the cases of a pandas DataFrame.</span>
+<span class="sd">        The DataFrame must be the column &#39;case_id&#39;.</span>
+<span class="sd">        Is not mandatory add cases to use the PepperMining.</span>
+<span class="sd">        In order to have a good experience in the root cause analysis, it is important include more information for the cases.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cases : pd.DataFrame</span>
+<span class="sd">            DataFrame with &#39;case_id&#39; column.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; data = {&#39;case_id&#39;: [1, 2, 3, 4, 5, 6, 7, 8],</span>
+<span class="sd">                    &#39;product&#39;: [&#39;Pumpkin&#39;, &#39;Carrots&#39;, &#39;Chilli peppers&#39;, &#39;Ginger&#39;, &#39;Mushrooms&#39;, &#39;Potatoes&#39;, &#39;Fresh herbs&#39;, &#39;Chokos&#39;]}</span>
+<span class="sd">        &gt;&gt;&gt; df = pd.DataFrame(data, columns=[&#39;case_id&#39;, &#39;product&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; pm.set_event_log(df)</span>
+<span class="sd">        &gt;&gt;&gt; pm.get_event_data()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">case_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__validate_case_data</span><span class="p">(</span><span class="n">cases</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PepperMining.clear_datas"><a class="viewcode-back" href="../../peppermining.html#peppermining.peppermining.PepperMining.clear_datas">[docs]</a>    <span class="k">def</span> <span class="nf">clear_datas</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clear event log and cases.</span>
+
+<span class="sd">        Remove all rows and columns.</span>
+<span class="sd">        After this method is possible include a new event logs to the peppermining object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">case_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PepperMining.clear_cases"><a class="viewcode-back" href="../../peppermining.html#peppermining.peppermining.PepperMining.clear_cases">[docs]</a>    <span class="k">def</span> <span class="nf">clear_cases</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clear cases.</span>
+
+<span class="sd">        Reset the case data.</span>
+<span class="sd">        After this method is possible include a new cases to the peppermining object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">case_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event_data</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PepperMining.read_event_log_csv"><a class="viewcode-back" href="../../peppermining.html#peppermining.peppermining.PepperMining.read_event_log_csv">[docs]</a>    <span class="k">def</span> <span class="nf">read_event_log_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">separator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">format_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Import the CSV to event logs data.</span>
+
+<span class="sd">        Import the CSV into a pandas DataFrame.</span>
+<span class="sd">        Convert the CSV into an event log Pandas DataFrame.</span>
+<span class="sd">        The first step is to import the CSV file and internal API validate and convert it to the event log.</span>
+<span class="sd">        See more infomation in the pandas documentation.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file_path : str</span>
+<span class="sd">            Any valid string path is acceptable.</span>
+<span class="sd">        separator : str</span>
+<span class="sd">            Delimiter used in CSV file</span>
+<span class="sd">        format_date : str</span>
+<span class="sd">            The strftime to parse time, e.g. &quot;%d/%m/%Y %H:%M&quot;. format=&#39;%d/%m/%Y %H:%M&#39;</span>
+<span class="sd">            If None then is used pd.to_datetime without format.</span>
+<span class="sd">            See strftime documentation for more information on choices.</span>
+<span class="sd">            https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; pm = PepperMining()</span>
+<span class="sd">        &gt;&gt;&gt; pm.read_event_log_csv(&quot;tests/data/eventlog-example.csv&quot;, separator=&#39;;&#39;, format_date=&#39;%d/%m/%Y %H:%M&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; pm.get_event_data()</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">separator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__format_date_csv</span> <span class="o">=</span> <span class="n">format_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_event_log</span><span class="p">(</span><span class="n">df</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PepperMining.read_cases_csv"><a class="viewcode-back" href="../../peppermining.html#peppermining.peppermining.PepperMining.read_cases_csv">[docs]</a>    <span class="k">def</span> <span class="nf">read_cases_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">separator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Import the CSV to cases data.</span>
+
+<span class="sd">        Import the CSV into a pandas DataFrame.</span>
+<span class="sd">        Convert the CSV into a Cases Pandas DataFrame.</span>
+<span class="sd">        The first step is to import the CSV file and internal API validate and convert it to the event log.</span>
+<span class="sd">        See more infomation in the pandas documentation.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file_path : str</span>
+<span class="sd">            Any valid string path is acceptable.</span>
+<span class="sd">        separator : str</span>
+<span class="sd">            Delimiter used in CSV file.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; pm = PepperMining()</span>
+<span class="sd">        &gt;&gt;&gt; pm.read_event_log_csv(&quot;c:/Temp/base-peppermining/peppermining/tests/data/eventlog-example.csv&quot;, separator=&#39;;&#39;,</span>
+<span class="sd">                                  format_date=&#39;%d/%m/%Y %H:%M&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; pm.read_cases_csv(&quot;c:/Temp/base-peppermining/peppermining/tests/data/case-example.csv&quot;, separator=&#39;;&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; pm.get_cases()</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">separator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_cases</span><span class="p">(</span><span class="n">df</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__validate_event_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate event logs data.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_df : pd.DataFrame</span>
+<span class="sd">            DataFrame with case_id, activity, and event_time columns.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        DataFrame</span>
+<span class="sd">            DataFrame with the data valid and datetime format.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            (1) Only Pandas DataFrame are allowed in Event logs.</span>
+<span class="sd">            (2) Has event logs data. It needs clear the event log.</span>
+<span class="sd">            (3) Not exists the column case_id, the column case_id is mandatory.</span>
+<span class="sd">            (4) Not exists the column activity, the column activity is mandatory.</span>
+<span class="sd">            (5) Not exists the column event_time, the column event_time is mandatory.</span>
+<span class="sd">            (6) The column event_time is a datetime type invalid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">p_df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only Pandas DataFrame are allowed in Event logs.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">event_data</span><span class="o">.</span><span class="n">empty</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Has event logs data. It needs clear the event logs. e.g. Use the method clear_datas.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">p_df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not exists the column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">, the column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is mandatory.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">ACTIVITY</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">p_df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not exists the column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">ACTIVITY</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">, the column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">ACTIVITY</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is mandatory.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">EVENT_TIME</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">p_df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not exists the column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">EVENT_TIME</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">, the column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">EVENT_TIME</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is mandatory.&quot;</span><span class="p">)</span>
+        <span class="c1"># Format event_time to datetime valid</span>
+        <span class="n">p_df</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">EVENT_TIME</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">p_df</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">EVENT_TIME</span><span class="o">.</span><span class="n">value</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__format_date_csv</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">p_df</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">EVENT_TIME</span><span class="o">.</span><span class="n">value</span><span class="p">])):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">EVENT_TIME</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is a datetime type invalid.&quot;</span><span class="p">)</span>
+        <span class="c1">#</span>
+        <span class="k">return</span> <span class="n">p_df</span>
+
+    <span class="k">def</span> <span class="nf">__validate_case_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate Cases data.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_df : pd.DataFrame</span>
+<span class="sd">            DataFrame with case_id and another columns.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        DataFrame</span>
+<span class="sd">            DataFrame with the data valid.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            (1) Only Pandas DataFrame are allowed in Cases.</span>
+<span class="sd">            (2) Has event Cases. It needs clear the datas.</span>
+<span class="sd">            (3) Not exists the column case_id, the column case_id is mandatory.</span>
+<span class="sd">            (4) Has not event logs data. Before add Cases data, is required has event logs.</span>
+<span class="sd">            (5) Exists Case without event logs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># TODO: Checking for duplicate keys</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">p_df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only Pandas DataFrame are allowed in Cases.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">case_data</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">event_data</span><span class="p">[</span><span class="s1">&#39;case_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Has cases data. It needs clear the datas. e.g. Use the method clear_cases.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">p_df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not exists the column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">, the column </span><span class="si">{</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is mandatory.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">event_data</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Has not event logs data. Before add Cases data, is required has event logs.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="kc">False</span> <span class="ow">in</span> <span class="p">(</span><span class="n">p_df</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">event_data</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="p">]))</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Exists case without event logs. Is required to remove the cases without event logs.&quot;</span><span class="p">)</span>
+        <span class="c1"># Exist event log without Case Then a merge is made</span>
+        <span class="k">if</span> <span class="kc">False</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">event_data</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">p_df</span><span class="p">[</span><span class="n">EventColumn</span><span class="o">.</span><span class="n">CASE_ID</span><span class="o">.</span><span class="n">value</span><span class="p">]))</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="n">p_df</span> <span class="o">=</span> <span class="n">p_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">case_data</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;case_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">p_df</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Thober Detofeno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
