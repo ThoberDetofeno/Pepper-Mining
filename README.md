@@ -115,7 +115,7 @@ This way the user can make "n" filters and return to last step without losing th
 The first filter is select all Event Logs that ended with activity 'pay compensation'. For this, let's create the CaseEndActivityFilter object.
 ```python
 # Filter on end activities of Pepper Mining analysis
-filter_1 = pm.filters.CaseEndActivityFilter(pepper, ['pay compensation'])
+filter_1 = pm.CaseEndActivityFilter(pepper, ['pay compensation'])
 filter_1.get_cases()
 ```
 
@@ -123,7 +123,7 @@ For the second filter, let's use the previous filter result. Now we want to view
   
 ```python
 # Case Filter of Pepper Filter (CaseEndActivityFilter)
-filter_2 = pm.filters.CaseFilter(filter_1, [3, 8], 'not contain')
+filter_2 = pm.CaseFilter(filter_1, [3, 8], 'not contain')
 filter_2.get_cases()
 ```
 To finish this section, we show the filters used in second filter. Is possible to render the graph only of second filter.
@@ -159,7 +159,7 @@ It is very common visualize the graph of specific variants. To show the graph of
 # Variant filter
 variant_list = ['register request->check ticket->examine casually->decide->pay compensation',
                 'register request->examine thoroughly->check ticket->decide->pay compensation']
-variants = pm.filters.VariantFilter(pepper, variant_list)
+variants = pm.VariantFilter(pepper, variant_list)
 # Create a image 
 variants.drawing().write_png('output.png')
 # Render the png file.
@@ -186,7 +186,7 @@ pepper.get_summary(['NumberOfEvents', 'NumberOfActivities', 'NumberOfCases', 'Av
 ```
 Another way is creating the Pepper KPI object and add the Pepper Analysis or Pepper Filter.
 ```python
-kp1 = pm.kpi.NumberOfCases(filter_1)
+kp1 = pm.NumberOfCases(filter_1)
 # Summary
 kp1.get_kpi()
 # get_kpi_variants
@@ -206,7 +206,7 @@ pepper.get_cases(['ThroughputTime'])
 # Summary with Throughput time
 pepper.get_summary(['ThroughputTime'])
 # Throughput time per variant
-kp2 = pm.kpi.ThroughputTime(pepper)
+kp2 = pm.ThroughputTime(pepper)
 kp2.get_kpi_variants()
 ```
 
