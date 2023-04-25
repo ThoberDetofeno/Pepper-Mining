@@ -270,7 +270,7 @@ v3.get_violation()
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
 
-More information HERE (https://thoberdetofeno.github.io/peppermining/)!
+More information [HERE](https://thoberdetofeno.github.io/peppermining/)!
   
 ## 📝 License
 Pepper Mining is completely free and open-source and licensed under the [MIT](https://github.com/ThoberDetofeno/peppermining/blob/main/LICENSE.txt) license.
