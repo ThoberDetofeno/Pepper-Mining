@@ -221,8 +221,14 @@ This section will have 3 steps: Definition of Process model, Conformance analysi
 
 Process Model represent the ideal model that used in the identification of validations and conformance.
 <img src="docs/images/running_example_model.png" alt="drawing" width="900"/> 
-
-  
+```python
+# Create the object ProcessModel
+model_1 = pm.ProcessModel()
+# Read the event log that represent the a ideal process.
+model_1.read_process_model_csv('https://raw.githubusercontent.com/ThoberDetofeno/peppermining/main/tests/data/processmodel-example.csv')
+# Return the process model data
+model_1.get_process_model()
+```
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
 
