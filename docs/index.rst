@@ -10,7 +10,7 @@ Welcome to Pepper Mining's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   modules
 
 Indices and tables
 ==================
