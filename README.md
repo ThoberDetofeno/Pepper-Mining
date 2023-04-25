@@ -245,7 +245,26 @@ con_analysis.get_summary(['NumberOfCases', 'AverageEventsPerCase', 'ThroughputTi
 con_analysis.diagnostics()
 ```
 
+**3. Violations**
 
+Pepper violation has various specific methods to discovery the violation of an event log. In the Pepper Mining each violations has a class that can be analysed on demand.
+
+In this section, we are showing three violations.
+1. Undesired Activity:
+```python
+v1 = pm.UndesiredActivity(pepper, model_1)
+v1.get_violation()
+```
+2. Undesired Connection:  
+```python
+v2 = pm.UndesiredConnection(pepper, model_1)
+v2.get_violation()
+```
+3. Activities executed by the same user:
+```python
+v3 = pm.RunBySameUser(pepper, ['register request', 'check ticket', 'pay compensation'])
+v3.get_violation()
+```
 ## <span>&#10070;</span> API Modules
 <img src="docs/images/api_module.png" alt="drawing" width="1200"/>
 
