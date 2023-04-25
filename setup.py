@@ -4,7 +4,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setup(name='peppermining',
-      version='0.1.0',
+      version='0.1.1',
       author='Thober Detofeno',
       author_email='thober@gmail.com',
       description="PepperMining is a free Process Mining framework.",
